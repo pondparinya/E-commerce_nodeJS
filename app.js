@@ -40,3 +40,7 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+(__dirname + '/public') + '/stylesheets/style.css'
+// (__dirname + '/public') + '/images'
+app.use( express.static( "public" ) );

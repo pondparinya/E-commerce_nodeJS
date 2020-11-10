@@ -1,8 +1,28 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+*{
+  font-family: 'Sarabun', sans-serif;
 }
 
-a {
-  color: #00B7FF;
+body {
+  padding: 50px;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
 }
+
+h1{
+  text-transform: uppercase;
+  
+}
+
+.navstyle {
+  margin-top: 3%;
+  border-radius: 10px;
+}
+
+.setposition{
+  text-align:right;
+  display:block;
+  margin-top: -3%;
+  padding-bottom: 1%;
+  text-decoration: none;
+  color:black;
+}
+
