@@ -1,34 +1,32 @@
-*{
-  font-family: 'Sarabun', sans-serif;
+* {
+    font-family: 'Sarabun', sans-serif;
 }
 
 body {
-  padding: 50px;
-  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+    padding: 50px;
+    /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
 }
 
-h1{
-  text-transform: uppercase;
-  
+h1 {
+    text-transform: uppercase;
 }
 
 .navstyle {
-  margin-top: 3%;
-  border-radius: 10px;
+    margin-top: 3%;
+    border-radius: 10px;
 }
 
-.setposition{
-  text-align:right;
-  display:block;
-  margin-top: -3%;
-  padding-bottom: 1%;
-  text-decoration: none;
-  color:black;
+.setposition {
+    text-align: right;
+    display: block;
+    margin-top: -3%;
+    padding-bottom: 1%;
+    text-decoration: none;
+    color: black;
 }
-
-
 
 .dropbtn {
+<<<<<<< HEAD
   /* font-size: 16px;   */
   border: none;
   outline: none;
@@ -37,8 +35,20 @@ h1{
   background-color: inherit;
   font-family: inherit;
   margin-top: 8px;
+=======
+    /* font-size: 16px;   */
+    border: none;
+    outline: none;
+    color: gray;
+    /* padding: 14px 16px; */
+    background-color: inherit;
+    font-family: inherit;
+    margin-top: 5px;
+>>>>>>> 97e42fe0f2653929d5669d197c89bb92e56a7907
 }
+
 .dropbtn:hover {
+<<<<<<< HEAD
   /* font-size: 16px;   */
   border: none;
   outline: none;
@@ -47,26 +57,38 @@ h1{
   background-color: inherit;
   font-family: inherit;
   margin-top: 8px;
+=======
+    /* font-size: 16px;   */
+    border: none;
+    outline: none;
+    color: white;
+    /* padding: 14px 16px; */
+    background-color: inherit;
+    font-family: inherit;
+    margin-top: 5px;
+>>>>>>> 97e42fe0f2653929d5669d197c89bb92e56a7907
 }
 
 .dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+    background-color: #ddd;
 }
+
 .dropdown:hover .dropdown-menu {
-  display: block;
-  margin-top: 0; 
+    display: block;
+    margin-top: 0;
 }
 
 .dropdown-item {
+<<<<<<< HEAD
   color: black;
 }
 
@@ -80,4 +102,7 @@ h1{
   margin-right: 20px; 
   color: white; 
   text-decoration: none;
+=======
+    color: black;
+>>>>>>> 97e42fe0f2653929d5669d197c89bb92e56a7907
 }
