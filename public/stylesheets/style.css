@@ -26,25 +26,25 @@ h1 {
 }
 
 .dropbtn {
-    /* font-size: 16px;   */
-    border: none;
-    outline: none;
-    color: gray;
-    /* padding: 14px 16px; */
-    background-color: inherit;
-    font-family: inherit;
-    margin-top: 5px;
+  /* font-size: 16px;   */
+  border: none;
+  outline: none;
+  color: gray;
+  /* padding: 14px 16px; */
+  background-color: inherit;
+  font-family: inherit;
+  margin-top: 8px;
 }
 
 .dropbtn:hover {
-    /* font-size: 16px;   */
-    border: none;
-    outline: none;
-    color: white;
-    /* padding: 14px 16px; */
-    background-color: inherit;
-    font-family: inherit;
-    margin-top: 5px;
+  /* font-size: 16px;   */
+  border: none;
+  outline: none;
+  color: white;
+  /* padding: 14px 16px; */
+  background-color: inherit;
+  font-family: inherit;
+  margin-top: 8px;
 }
 
 .dropdown-content a {
@@ -66,5 +66,17 @@ h1 {
 }
 
 .dropdown-item {
-    color: black;
+  color: black;
+}
+
+.login-button  {
+  margin-right: 20px; 
+  color: gray; 
+  text-decoration: none;
+
+}
+.login-button:hover {
+  margin-right: 20px; 
+  color: white; 
+  text-decoration: none;
 }
