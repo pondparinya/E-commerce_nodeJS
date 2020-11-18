@@ -39,7 +39,7 @@ app.use('/users', usersRouter);
 
 // Connect database 
 
-const url = "mongodb+srv://ecommerce:ecommerce@cluster0.idq5h.mongodb.net/test?retryWrites=true&w=majority";
+const url = "mongodb+srv://ecommerce:ecommerce@cluster0.idq5h.mongodb.net/<dbname>?retryWrites=true&w=majority";
 mongoose.connect(url, {
         useNewUrlParser: true,
         useUnifiedTopology: true
