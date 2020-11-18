@@ -26,7 +26,6 @@ h1 {
 }
 
 .dropbtn {
-<<<<<<< HEAD
   /* font-size: 16px;   */
   border: none;
   outline: none;
@@ -35,20 +34,9 @@ h1 {
   background-color: inherit;
   font-family: inherit;
   margin-top: 8px;
-=======
-    /* font-size: 16px;   */
-    border: none;
-    outline: none;
-    color: gray;
-    /* padding: 14px 16px; */
-    background-color: inherit;
-    font-family: inherit;
-    margin-top: 5px;
->>>>>>> 97e42fe0f2653929d5669d197c89bb92e56a7907
 }
 
 .dropbtn:hover {
-<<<<<<< HEAD
   /* font-size: 16px;   */
   border: none;
   outline: none;
@@ -57,16 +45,6 @@ h1 {
   background-color: inherit;
   font-family: inherit;
   margin-top: 8px;
-=======
-    /* font-size: 16px;   */
-    border: none;
-    outline: none;
-    color: white;
-    /* padding: 14px 16px; */
-    background-color: inherit;
-    font-family: inherit;
-    margin-top: 5px;
->>>>>>> 97e42fe0f2653929d5669d197c89bb92e56a7907
 }
 
 .dropdown-content a {
@@ -88,7 +66,6 @@ h1 {
 }
 
 .dropdown-item {
-<<<<<<< HEAD
   color: black;
 }
 
@@ -102,7 +79,4 @@ h1 {
   margin-right: 20px; 
   color: white; 
   text-decoration: none;
-=======
-    color: black;
->>>>>>> 97e42fe0f2653929d5669d197c89bb92e56a7907
 }
