@@ -1,8 +1,7 @@
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark  sticky-top " style="border-radius: 10px;">
-   
-    
-    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-        aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark  sticky-top " style="border-radius: 10px;">
+
+
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavId">
@@ -11,12 +10,12 @@
                 <a class="nav-link" href="/">หน้าหลัก <span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-              <div class="dropdown">
-                
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">เสื้อ</a>
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" href="/men_clothes">เสื้อผู้ชาย</a>
-                    <a class="dropdown-item" href="/woman_clothes">เสื้อผู้หญิง</a>
+                <div class="dropdown">
+
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">เสื้อ</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="/men_clothes">เสื้อผู้ชาย</a>
+                        <a class="dropdown-item" href="/woman_clothes">เสื้อผู้หญิง</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">กางเกง</a>
@@ -26,21 +25,34 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">รองเท้า</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownId">
-                  <a class="dropdown-item" href="/men_shoes">รองเท้าผู้ชาย</a>
-                  <a class="dropdown-item" href="/woman_shoes">รองเท้าผู้หญิง</a>
-              </div>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="/cart">ตะกร้าสินค้า<span class="sr-only"></span></a>
-        </li>
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">รองเท้า</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="/men_shoes">รองเท้าผู้ชาย</a>
+                    <a class="dropdown-item" href="/woman_shoes">รองเท้าผู้หญิง</a>
+                </div>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="/cart">ตะกร้าสินค้า<span class="sr-only"></span></a>
+            </li>
         </ul>
-        <a class="py-2 d-none d-md-inline-block login-button" href="/login">เข้าสู่ระบบ</a>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </div>
-    </div>
+        <% if(!users){ %>
+            <a class="py-2 d-none d-md-inline-block login-button" href="/login">เข้าสู่ระบบ</a>
+            <% } %>
+                <% if (users){ %>
+                    <div class="dropdown">
+                        <a class="py-2 d-none d-md-inline-block login-button nav-link dropdown-toggle">
+                            <%= users.username%>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="/users/logout">ออกจากระบบ</a>
+
+                        </div>
+                    </div>
+                    <% } %>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                        </div>
+                        </div>
 </nav>
