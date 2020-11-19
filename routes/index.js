@@ -16,26 +16,14 @@ router.get('/login', (req, res, next) => {
 router.get('/cart', (req, res, next) => {
     res.render('pages/cart');
 })
-
-router.get('/woman_clothes', (req, res, next) => {
-    res.render('pages/woman_clothes');
-})
-
-router.get('/men_clothes', (req, res, next) => {
-    res.render('pages/men_clothes');
-})
-
-router.get('/woman_pants', (req, res, next) => {
-    res.render('pages/woman_pants');
-})
-
-router.get('/men_pants', (req, res, next) => {
-        res.render('pages/men_pants');
-    })
     // Register Page
 router.get('/register', (req, res, next) => {
     res.render('pages/register');
 });
+router.get('/balenciaga', (req, res, next) => {
+    res.render('products/balenciaga');
+});
+
 
 router.post('/login', function(req, res, next) {
     var { username, email, password } = req.body
