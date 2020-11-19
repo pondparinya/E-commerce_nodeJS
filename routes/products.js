@@ -3,7 +3,7 @@ var router = express.Router();
 
 
 
-router.get('/addidas', function(req, res) {
+router.get('/adidas', function(req, res) {
     res.render('products/adidas')
 });
 router.get('/balenciaga', function(req, res) {

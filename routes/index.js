@@ -20,9 +20,13 @@ router.get('/cart', (req, res, next) => {
 router.get('/register', (req, res, next) => {
     res.render('pages/register');
 });
-router.get('/balenciaga', (req, res, next) => {
-    res.render('products/balenciaga');
+router.get('/shopcart', (req, res, next) => {
+    res.render('partials/shopcart');
 });
+
+// router.get('/balenciaga', (req, res, next) => {
+//     res.render('products/balenciaga');
+// });
 
 router.post('/test', function (req,res){
     res.render('products/vans');
