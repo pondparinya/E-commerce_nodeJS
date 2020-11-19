@@ -7,6 +7,9 @@ var passport = require('passport');
 router.get('/', function(req, res, next) {
     res.send('respond with a resource');
 });
+router.get('/login', function(req, res) {
+    res.redirect('/login')
+});
 
 
 router.post('/login', passport.authenticate('local', {
