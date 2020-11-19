@@ -4,7 +4,7 @@ var router = express.Router();
 
 
 router.get('/addidas', function(req, res) {
-    res.render('products/addidas')
+    res.render('products/adidas')
 });
 router.get('/balenciaga', function(req, res) {
     res.render('products/balenciaga')

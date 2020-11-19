@@ -24,7 +24,9 @@ router.get('/balenciaga', (req, res, next) => {
     res.render('products/balenciaga');
 });
 
-
+router.post('/test', function (req,res){
+    res.render('products/vans');
+});
 router.post('/login', function(req, res, next) {
     var { username, email, password } = req.body
     var newuser = new User({
