@@ -12,8 +12,9 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 require('./config/passport');
 var flash = require('connect-flash');
+var productsRouter = require('./routes/products');
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users')
+var usersRouter = require('./routes/users');
 var app = express();
 app.use(session({
         secret: 'secret',
@@ -35,12 +36,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 // Share object
 app.use(function(req, res, next) {
-        res.locals.users = req.user;
-        next();
-    })
-    // Use URL & Router 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+    res.locals.users = req.user;
+    next();
+});
+
 
 // Connect database 
 
@@ -57,7 +56,10 @@ mongoose.connect(url, {
         console.log("Fail to connect database")
     })
 
-
+// Use URL & Router 
+app.use('/products', productsRouter);
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
 
 
 
