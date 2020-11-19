@@ -52,7 +52,7 @@ router.post('/login', function(req, res, next) {
         })
     })
 
-    res.redirect('/')
+    res.redirect('users/login')
 });
 
 router.get('/woman_shoes', (req, res, next) => {
