@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/login', (req, res, next) => {
-    res.render('pages/login');
+    res.render('pages/login',{title:"homepage"});
 });
 
 router.get('/cart', (req, res, next) => {
