@@ -20,8 +20,9 @@ router.get('/cart', (req, res, next) => {
 router.get('/register', (req, res, next) => {
     res.render('pages/register');
 });
-router.get('/shopcart', (req, res, next) => {
-    res.render('partials/shopcart');
+
+router.get('/admin', (req, res, next) => {
+    res.render('pages/admin');
 });
 
 // router.get('/balenciaga', (req, res, next) => {

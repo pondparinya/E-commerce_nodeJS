@@ -7,40 +7,58 @@
 <body>
 
     <%- include ('../partials/promotions') -%>
-    <a href=""><img src="/images/products/adidas/adi.gif" style="margin-top: 20px;" class="w-100"></a>
+    <img src="/images/products/adidas/adi.gif" style="margin-top: 20px;" class="w-100">
 
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-md-16">
                 <div class="card" style="width: 18rem; margin-top:20px;">
-                    <img src="/images/products/adidas/adi_1.png" class="card-img-top"  alt="balen shoes">
+                    <img src="/images/products/adidas/adi_1.png" class="card-img-top" alt="adidas shoes">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
-                        <a href="#" data-name="addas-yeezy" data-price="10000" class="btn btn-primary add-to-cart">Add to cart</a>
+
+                        <a href="#" data-name="addas-yeezy" data-price="10000" class="btn btn-primary add-to-cart">Add
+                            to cart</a>
+
+                        <button id="myBtn">Open Modal</button>
+
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <p>Some text in the Modal..</p>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
             </div>
             <div class="col-md-16">
                 <div class="card" style="width: 18rem;margin-top:20px;">
-                    <img src="/images/products/adidas/adi_2.png" class="card-img-top"  alt="balen shoes">
+                    <img src="/images/products/adidas/adi_2.png" class="card-img-top" alt="adidas shoes">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
-                        <a href="#" data-name="addas-yeezy" data-price="10000"  class="btn btn-primary add-to-cart">Go somewhere</a>
+                        <a href="#" data-name="addas-yeezy" data-price="10000" class="btn btn-primary add-to-cart">Go
+                            somewhere</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-16">
                 <div class="card" style="width: 18rem;margin-top:20px;">
-                    <img src="/images/products/adidas/adi_3.png" class="card-img-top"  alt="balen shoes">
+                    <img src="/images/products/adidas/adi_3.png" class="card-img-top" alt="adidas shoes">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
-                        <a href="#" data-name="addas-yeezy" data-price="10000"  class="btn btn-primary add-to-cart">Go somewhere</a>
+                        <a href="#" data-name="addas-yeezy" data-price="10000" class="btn btn-primary add-to-cart">Go
+                            somewhere</a>
                     </div>
                 </div>
             </div>
@@ -48,5 +66,6 @@
     </div>
 
     <script src="/js/shopcart.js"></script>
-    
+    <script src="/js/buy_product.js"></script>
+
 </body>

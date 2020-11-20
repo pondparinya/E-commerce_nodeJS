@@ -12,8 +12,8 @@ router.get('/balenciaga', function(req, res) {
 router.get('/converse', function(req, res) {
     res.render('products/converse')
 });
-router.get('/cotton-on', function(req, res) {
-    res.render('products/cotton-on')
+router.get('/amiri', function(req, res) {
+    res.render('products/amiri')
 });
 router.get('/gucci', function(req, res) {
     res.render('products/gucci')
