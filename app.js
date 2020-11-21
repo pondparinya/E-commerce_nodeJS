@@ -43,13 +43,13 @@ app.use(function(req, res, next) {
 
 // Connect database 
 
-const url = "mongodb+srv://ecommerce:ecommerce@cluster0.idq5h.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const url = "mongodb+srv://ecommerce:ecommerce@cluster0.idq5h.mongodb.net/users?retryWrites=true&w=majority";
 mongoose.connect(url, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     }).then(function() {
 
-        console.log("Connecting to Mongodb Success!")
+        console.log("Connecting to Database Name : users success!")
     })
     .catch(function(err) {
         console.log(err)
