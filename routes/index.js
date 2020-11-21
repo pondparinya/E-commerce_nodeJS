@@ -2,36 +2,43 @@ var express = require('express');
 var router = express.Router();
 const User = require('../models/model');
 const bcrypt = require('bcryptjs');
+var passport = require('passport');
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('pages/index');
 });
-
+////////////////////////////////////////////////////////////////////////
+// Login Page
 router.get('/login', (req, res, next) => {
     res.render('pages/login');
 });
 
-router.get('/cart', (req, res, next) => {
-    res.render('pages/cart');
-})
-    // Register Page
+router.post('/login', passport.authenticate('local', {
+        // successRedirect: '/',
+        failureRedirect: '/users/login'
+    }),
+    function(req, res) {
+        var admin = req.user.admin
+        console.log(admin)
+        res.redirect('/')
+    }
+);
+router.get('/logout', function(req, res, next) {
+    req.logOut();
+    res.redirect('/')
+});
+////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////
+// Register Page
 router.get('/register', (req, res, next) => {
     res.render('pages/register');
 });
-router.get('/shopcart', (req, res, next) => {
-    res.render('partials/shopcart');
-});
 
-// router.get('/balenciaga', (req, res, next) => {
-//     res.render('products/balenciaga');
-// });
-
-router.post('/test', function (req,res){
-    res.render('products/vans');
-});
-router.post('/login', function(req, res, next) {
+router.post('/register', function(req, res, next) {
     var { username, email, password } = req.body
     var newuser = new User({
         username: username,
@@ -44,9 +51,14 @@ router.post('/login', function(req, res, next) {
             newuser.password = hash;
             newuser.save();
         })
-    })
+    });
 
-    res.redirect('users/login')
+    res.redirect('/login')
+});
+////////////////////////////////////////////////////////////////////////
+
+router.get('/shopcart', (req, res, next) => {
+    res.render('partials/shopcart');
 });
 
 router.get('/woman_shoes', (req, res, next) => {
@@ -55,10 +67,10 @@ router.get('/woman_shoes', (req, res, next) => {
 
 router.get('/men_shoes', (req, res, next) => {
     res.render('pages/men_shoes');
-})
+});
+router.get('/cart', (req, res, next) => {
+    res.render('pages/cart');
+});
 
 
-router.post('/login', function(req, res) {
-    console.log(req.body.username)
-})
 module.exports = router;

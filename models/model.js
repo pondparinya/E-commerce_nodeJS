@@ -4,6 +4,7 @@ const userSchema = new mongoose.Schema({
     username: { type: String },
     email: { type: String },
     password: { type: String },
+    admin: { type: Number },
     date: {
 
         type: Date,
@@ -12,4 +13,4 @@ const userSchema = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('regdata', userSchema);
+module.exports = mongoose.model('userdata', userSchema);
