@@ -1,10 +1,23 @@
 * {
-    font-family: 'Sarabun', sans-serif;
+  box-sizing: border-box;
+  font-family: 'Sarabun', sans-serif;
+  
+}
+
+
+.img-magnifier-container {
+  position:relative;
+  cursor:none;
+    
+}
+
+a#navcolor{
+  color: #FFB000;
 }
 
 body {
     padding: 50px;
-    /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+    
 }
 
 h1 {

@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 ////////////////////////////////////////////////////////////////////////
 // Login Page
 router.get('/login', (req, res, next) => {
-    res.render('pages/login');
+    res.render('pages/login', { title: "homepage" });
 });
 
 router.post('/login', passport.authenticate('local', {
