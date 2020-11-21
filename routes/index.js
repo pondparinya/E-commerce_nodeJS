@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/login', (req, res, next) => {
-    res.render('pages/login',{title:"homepage"});
+    res.render('pages/login',{title:"LOGIN"});
 });
 
 router.get('/cart', (req, res, next) => {
@@ -27,10 +27,10 @@ router.get('/admin', (req, res, next) => {
 router.get('/adminnav', (req, res, next) => {
     res.render('partials/adminnav');
 });
+router.get('/add_product', (req, res, next) => {
+    res.render('pages/add_product');
+});
 
-// router.get('/balenciaga', (req, res, next) => {
-//     res.render('products/balenciaga');
-// });
 
 router.post('/test', function (req,res){
     res.render('products/vans');

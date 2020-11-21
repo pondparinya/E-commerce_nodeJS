@@ -1,11 +1,11 @@
 
-<nav class="navbar navbar-expand-md  fixed-top " style ="background-color:#000000">
+<nav class="navbar navbar-expand-md  fixed-top navbar-dark bg-dark">
 
 
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
         
         <span class="navbar-toggler-icon"></span>
-        <span>Menu</span>
+        
 
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavId">
@@ -48,6 +48,8 @@
                 
             </li>
         </ul>
+
+        <a class="py-2 d-none d-md-inline-block login-button" id="navcolor" href="/add_product" style="text-transform:uppercase">Add product</a>
         <% if(!users){ %>
             <a class="py-2 d-none d-md-inline-block login-button" id="navcolor" href="/login" style="text-transform:uppercase">login</a>
             <% } %>
