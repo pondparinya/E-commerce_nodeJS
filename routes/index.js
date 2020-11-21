@@ -24,6 +24,9 @@ router.get('/register', (req, res, next) => {
 router.get('/admin', (req, res, next) => {
     res.render('pages/admin');
 });
+router.get('/adminnav', (req, res, next) => {
+    res.render('partials/adminnav');
+});
 
 // router.get('/balenciaga', (req, res, next) => {
 //     res.render('products/balenciaga');

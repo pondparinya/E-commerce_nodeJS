@@ -13,18 +13,20 @@
         <div class="row justify-content-between">
             <div class="col-md-16">
                 <div class="card" style="width: 18rem; margin-top:20px;">
-                    <img src="/images/products/adidas/adi_1.png" class="card-img-top" alt="adidas shoes">
+                    <div class="img-magnifier-container">
+                    <img id="myimage" src="/images/products/adidas/adi_1.png" class="card-img-top" alt="adidas shoes">
+                </div>
                     <div class="card-body">
                         <h5 class="card-title">Yeezy 350 V2 "Bred"</h5>
                         <p class="card-text">18,000 ฿ </p>
 
-                        <a href="#" data-name="addas-yeezy" data-price="10000" class="btn btn-primary add-to-cart">Add
-                            to cart</a>
+                        <!-- <a href="#" data-name="addas-yeezy" data-price="10000" class="btn btn-primary add-to-cart">Add
+                            to cart</a> -->
 
 
 
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Add to cart 2</button>
-                            
+                            <a href="#"class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"  data-whatever="@mdo">Add to cart</a>
+                            <%- include('../partials/size') %>
                           
                             
 
@@ -58,5 +60,11 @@
     </div>
 
     <script src="/js/shopcart.js"></script>
-
+    <script src="/js/magnifier_glass.js"></script>
+    
+    <script>
+        /* Initiate Magnify Function
+        with the id of the image, and the strength of the magnifier glass:*/
+        magnify("myimage", 2);
+        </script>
 </body>
