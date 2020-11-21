@@ -3,7 +3,7 @@ const url = 'mongodb+srv://ecommerce:ecommerce@cluster0.idq5h.mongodb.net/users?
 mongoose.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
-})
+});
 const userSchema = new mongoose.Schema({
     username: { type: String },
     email: { type: String },
