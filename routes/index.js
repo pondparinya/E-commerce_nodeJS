@@ -3,7 +3,8 @@ var router = express.Router();
 const User = require('../models/model');
 const bcrypt = require('bcryptjs');
 var passport = require('passport');
-
+const auth = require('../config/auth');
+const isAdmin = auth.isAdmin
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -12,7 +13,7 @@ router.get('/', function(req, res, next) {
 ////////////////////////////////////////////////////////////////////////
 // Login Page
 router.get('/login', (req, res, next) => {
-    res.render('pages/login',{title:"LOGIN"});
+    res.render('pages/login', { title: "LOGIN" });
 });
 
 router.post('/login', passport.authenticate('local', {
@@ -37,7 +38,7 @@ router.get('/admin', (req, res, next) => {
 router.get('/adminnav', (req, res, next) => {
     res.render('partials/adminnav');
 });
-router.get('/add_product', (req, res, next) => {
+router.get('/add_product', isAdmin, (req, res, next) => {
     res.render('pages/add_product');
 });
 
