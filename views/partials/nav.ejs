@@ -12,47 +12,26 @@
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
             <li class="nav-item ">
                 <a class="nav-link" id="navcolor" href="/" style="text-transform:uppercase">home</a>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link" id="navcolor" href="/products/gucci" style="text-transform:uppercase">gucci<span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" id="navcolor" href="/products/balenciaga" style="text-transform:uppercase">balenciaga<span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" id="navcolor" href="/products/nike" style="text-transform:uppercase">nike<span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" id="navcolor" href="/products/adidas" style="text-transform:uppercase">adidas</span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" id="navcolor" href="/products/reebok" style="text-transform:uppercase">reebok<span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" id="navcolor" href="/products/vans" style="text-transform:uppercase">vans<span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" id="navcolor" href="/products/amiri" style="text-transform:uppercase">amiri<span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" id="navcolor" href="/products/converse" style="text-transform:uppercase">converse<span class="sr-only"></span></a>
-            </li>
+            <% brand.forEach(function(brands){ %>
+                <li class="nav-item ">
+                    <a class="nav-link" id="navcolor" href="/<%= brands.brand %> " style="text-transform:uppercase">
+                        <%= brands.brand%> <span class="sr-only"></span></a>
 
-
-
-
-
-            
-            <li class="nav-item ">
-                <a class="nav-link" id="navcolor" href="#" data-toggle="modal" data-target="#cart" style="text-transform:uppercase">cart(<span
+                    <% }) %>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" id="navcolor" href="#" data-toggle="modal" data-target="#cart" style="text-transform:uppercase">cart(<span
                 class="total-count"></span>)</a>
 
-            </li>
+                </li>
         </ul>
         <% if (users && users.admin==1){ %>
             <a class="py-2 d-none d-md-inline-block login-button" id="navcolor" href="/admin/addproducts" style="text-transform:uppercase">Add product</a>
+            <a class="py-2 d-none d-md-inline-block login-button" id="navcolor" href="/admin/addbrand" style="text-transform:uppercase">Add brand product</a>
             <% }%>
 
 
@@ -97,7 +76,7 @@
                 <div class="modal-footer">
                     <button class="clear-cart btn btn-danger" data-target="#confirm">Clear Cart</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <a href="/cart" class="btn btn-primary" >Order now</a>
+                    <a href="/cart" class="btn btn-primary">Order now</a>
                 </div>
             </div>
         </div>
@@ -105,23 +84,22 @@
 
     <div class="modal" tabindex="-1" id="comfirm">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
-            <div class="modal-body">
-              <p>Modal body text goes here.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
     <script src="/js/shopcart.js"></script>
 </body>
-

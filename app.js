@@ -33,14 +33,15 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
-// Setup Passport
+app.locals.formatMoney = function(number) {
+        return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    }
+    // Setup Passport
 app.use(passport.initialize());
 app.use(passport.session());
 // Share object
 app.get('*', function(req, res, next) {
     res.locals.users = req.user;
-    res.locals.products = req.params.product
     next();
 });
 
