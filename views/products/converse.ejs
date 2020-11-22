@@ -4,6 +4,7 @@
 </head>
 <%- include ('../partials/nav') -%>
 <%- include('../partials/size') %>
+
 <body>
 
     <%- include ('../partials/promotions') -%>
@@ -14,39 +15,44 @@
             <div class="col-md-16">
                 <div class="card" style="width: 18rem; margin-top:20px;">
                     <div class="img-magnifier-container">
-                    <img id="myimage" src="/images/products/converse/con_1.png" class="card-img-top"  alt="converse shoes">
+                        <img id="myimage" src="/images/products/converse/con_1.png" class="card-img-top"
+                            alt="converse shoes">
                     </div>
-                    <div class="card-body">
+                    <div class="card-body bg-dark" id="nameproducts">
                         <h5 class="card-title">Chuck 70 x Off-White (hi)</h5>
                         <p class="card-text">38,000 ฿</p>
-                        <a href="#" data-name="converse-chuck-70" data-price="38000"  class="btn btn-primary add-to-cart" data-toggle="modal"
-                        data-target="#exampleModal">Add to Cart</a>
+                        <a href="#" data-name="converse-chuck-70" data-price="38000" class="btn btn-primary add-to-cart"
+                            data-toggle="modal" data-target="#confirm">Add to Cart</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-16">
                 <div class="card" style="width: 18rem;margin-top:20px;">
                     <div class="img-magnifier-container">
-                    <img id="myimage2" src="/images/products/converse/con_2.png" class="card-img-top"  alt="converse  shoes">
+                        <img id="myimage2" src="/images/products/converse/con_2.png" class="card-img-top"
+                            alt="converse  shoes">
                     </div>
-                    <div class="card-body">
+                    <div class="card-body bg-dark" id="nameproducts">
                         <h5 class="card-title">Jack Purcell (Indonesia)</h5>
                         <p class="card-text">2,400 ฿</p>
-                        <a href="#" data-name="converse-jack-purcell-indonesia" data-price="2400"  class="btn btn-primary add-to-cart" data-toggle="modal"
-                        data-target="#exampleModal">Add to Cart</a>
+                        <a href="#" data-name="converse-jack-purcell-indonesia" data-price="2400"
+                            class="btn btn-primary add-to-cart" data-toggle="modal" data-target="#confirm">Add to
+                            Cart</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-16">
                 <div class="card" style="width: 18rem;margin-top:20px;">
                     <div class="img-magnifier-container">
-                    <img id="myimage3" src="/images/products/converse/con_3.png" class="card-img-top"  alt="converse shoes">
+                        <img id="myimage3" src="/images/products/converse/con_3.png" class="card-img-top"
+                            alt="converse shoes">
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">One Star OX</h5>
+                    <div class="card-body bg-dark" id="nameproducts">
+                        <h5 class="card-asd">One Star OX</h5>
                         <p class="card-text">3,000 ฿</p>
-                        <a href="#" data-name="converse-one-star-ox" data-price="3000"  class="btn btn-primary add-to-cart" data-toggle="modal"
-                        data-target="#exampleModal">Add to Cart</a>
+                        <a href="#" data-name="converse-one-star-ox" data-price="3000"
+                            class="btn btn-primary " data-toggle="modal" data-target="#confirm">Add to
+                            Cart</a>
                     </div>
                 </div>
             </div>
@@ -58,7 +64,7 @@
 
     <script>
         magnify("myimage", 2);
-        magnify("myimage2",2);
+        magnify("myimage2", 2);
         magnify("myimage3", 2);
     </script>
 </body>

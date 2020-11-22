@@ -86,9 +86,11 @@ var shoppingCart = (function() {
   
     // Clear cart
     obj.clearCart = function() {
-      confirm("Are you sure ?")
+      var del = confirm("Are you sure ?");
+      if(del === true) {
       cart = [];
       saveCart();
+      }
     }
   
     // Count cart 
