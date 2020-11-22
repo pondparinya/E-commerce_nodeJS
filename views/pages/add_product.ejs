@@ -1,18 +1,24 @@
 <%- include ('../partials/head') -%>
 <%- include ('../partials/nav') -%>
 <div class="container ">
-<form style="margin-top:30px;">
-    <div class="form-row   justify-content-center">
-      <div class="form-group col-md-4">
+<form style="margin-top:10%;">
+    
+    <div class="row justify-content-center">
+      <div class="form-group col-md-5">
         <label for="text">Name of Product</label>
         <input type="text" class="form-control" name="inputProduct" id="inputProduct">
       </div>
-      <div class="form-group col-md-4 ">
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="form-group col-md-5">
         <label for="inputPassword4">Price</label>
         <input type="number" class="form-control" name="inputPrice" id="inputPrice">
       </div>
-    
-    <div class="form-group col-md-4">
+    </div>
+
+    <div class="row justify-content-center">
+    <div class="form-group col-md-5">
         <label for="inputState">Brand</label>
         <select id="inputState" class="form-control" name="inputBrand">
           <option>Select ...</option>
@@ -26,8 +32,10 @@
           <option>Vans</option>
         </select>
       </div>
-    
-      <div class="form-group col-md-4">
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="form-group col-md-5">
         <label for="inputState">Size</label>
         <select id="inputState" class="form-control">
           <option>Select ...</option>
@@ -44,14 +52,19 @@
           <option>11 US</option>
         </select>
       </div>
+    </div>
 
-
+    <div class="row justify-content-center">
       <form>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-5">
           <label for="exampleFormControlFile1">Insert Images</label>
           <input type="file" class="form-control-file" id="exampleFormControlFile1">
         </div>
       </form>
+    </div>
 
-      
+    </div>
+    <div class="row justify-content-center">
+        <a href="#" class="btn btn-primary btn-lg col-md-1" role="button" aria-pressed="true">Add</a>
+    </div>
 </div>

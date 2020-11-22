@@ -35,8 +35,10 @@ app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
 // Share object
-app.use(function(req, res, next) {
+app.get('*', function(req, res, next) {
     res.locals.users = req.user;
+    // res.locals.Admin = req.user.admin || null
+    // res.locals.Admin = req.user.admin;
     next();
 });
 

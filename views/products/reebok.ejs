@@ -3,7 +3,7 @@
     <title>REEBOK</title>
 </head>
 <%- include ('../partials/nav') -%>
-
+<%- include('../partials/size') %>
 <body>
 
     <%- include ('../partials/promotions') -%>
@@ -13,31 +13,40 @@
         <div class="row justify-content-between">
             <div class="col-md-16">
                 <div class="card" style="width: 18rem; margin-top:20px;">
-                    <img src="/images/products/reebok/reebok_1.png" class="card-img-top"  alt="reebok shoes">
+                    <div class="img-magnifier-container">
+                    <img id="myimage" src="/images/products/reebok/reebok_1.png" class="card-img-top"  alt="reebok shoes">
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title">Pump Supreme (White)</h5>
                         <p class="card-text">10,000 ฿</p>
-                        <a href="#" data-name="addas-yeezy" data-price="10000" class="btn btn-primary add-to-cart">Go somewhere</a>
+                        <a href="#" data-name="reebok-pump-supreme-white" data-price="10000" class="btn btn-primary add-to-cart"data-toggle="modal"
+                        data-target="#exampleModal">Add to cart</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-16">
                 <div class="card" style="width: 18rem;margin-top:20px;">
-                    <img src="/images/products/reebok/reebok_2.png" class="card-img-top"  alt="reebok shoes">
+                    <div class="img-magnifier-container">
+                    <img id="myimage2" src="/images/products/reebok/reebok_2.png" class="card-img-top"  alt="reebok shoes">
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title">Pump x Tom & Jerry</h5>
                         <p class="card-text">10,000 ฿</p>
-                        <a href="#" data-name="addas-yeezy" data-price="10000" class="btn btn-primary add-to-cart">Go somewhere</a>
+                        <a href="#" data-name="reebok-pump-tom-jerry" data-price="10000" class="btn btn-primary add-to-cart"data-toggle="modal"
+                        data-target="#exampleModal">Add to cart</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-16">
                 <div class="card" style="width: 18rem;margin-top:20px;">
-                    <img src="/images/products/reebok/reebok_3.png" class="card-img-top"  alt="reebok shoes">
+                    <div class="img-magnifier-container">
+                    <img id="myimage3" src="/images/products/reebok/reebok_3.png" class="card-img-top"  alt="reebok shoes">
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title">Vetement x Instapump fury</h5>
                         <p class="card-text">30,000 ฿</p>
-                        <a href="#" data-name="addas-yeezy" data-price="10000" class="btn btn-primary add-to-cart">Go somewhere</a>
+                        <a href="#" data-name="reebok-vetement-instapump" data-price="30000" class="btn btn-primary add-to-cart"data-toggle="modal"
+                        data-target="#exampleModal">Add to cart</a>
                     </div>
                 </div>
             </div>
@@ -45,4 +54,11 @@
     </div>
 
     <script src="/js/shopcart.js"></script>
+    <script src="/js/magnifier_glass.js"></script>
+
+    <script>
+        magnify("myimage", 2);
+        magnify("myimage2",2);
+        magnify("myimage3", 2);
+    </script>
 </body>

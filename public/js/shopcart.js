@@ -60,8 +60,10 @@ var shoppingCart = (function() {
     obj.removeItemFromCart = function(name) {
         for(var item in cart) {
           if(cart[item].name === name) {
+            confirm("Are you sure ?")
             cart[item].count --;
             if(cart[item].count === 0) {
+              confirm("Are you sure ?")
               cart.splice(item, 1);
             }
             break;
@@ -74,6 +76,7 @@ var shoppingCart = (function() {
     obj.removeItemFromCartAll = function(name) {
       for(var item in cart) {
         if(cart[item].name === name) {
+          confirm("Are you sure ?")
           cart.splice(item, 1);
           break;
         }
@@ -83,6 +86,7 @@ var shoppingCart = (function() {
   
     // Clear cart
     obj.clearCart = function() {
+      confirm("Are you sure ?")
       cart = [];
       saveCart();
     }
