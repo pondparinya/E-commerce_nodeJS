@@ -1,64 +1,40 @@
 <head>
     <%- include ('../partials/head') -%>
-    <title>BALENCIAGA</title>
+        <title>GUCCI</title>
 </head>
 <%- include ('../partials/nav') -%>
-<%- include('../partials/size') %>
-<body>
+    <%- include('../partials/size') %>
 
-    <%- include ('../partials/promotions') -%>
-    <img src="/images/products/nike/time.gif" style="margin-top: 20px;" class="w-100">
+        <body>
 
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-md-16">
-                <div class="card" style="width: 18rem; margin-top:20px;">
-                    <div class="img-magnifier-container">
-                    <img id="myimage" src="/images/products/nike/nike_1.png" class="card-img-top"  alt="nike shoes">
+            <%- include ('../partials/promotions') -%>
+                <img src="/images/products/gucci/gucci.gif" style="margin-top: 20px;" class="w-100">
+                
+                        <div class="container">
+                            <div class="row justify-content-between">
+                                <% products.forEach(function(product){ %>
+                                    <% if (product.brand == "Nike"){ %>
+                            <div class="col-md-16">
+                                
+                                <div class="card" style="width: 18rem;margin-top:20px;">
+                                    <a href="#"><img src="<%= product.img  %> " class="card-img-top" alt="gucci shoes"></a>
+                                    <div class="card-body bg-dark" id="nameproducts">
+                                        <h5 class="card-title">
+                                            <%= product.nameproducts %>
+                                        </h5>
+                                        <p class="card-text">
+                                            <%= product.price %>
+                                        </p>
+                                        <a href="#" data-name="addas-yeezy" data-price="10000" class="btn btn-primary add-to-cart">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+                                <% }) %>
+                        </div>
                     </div>
-                    <div class="card-body bg-dark" id="nameproducts">
-                        <h5 class="card-title">Air Max 97 "Silver Bullet"</h5>
-                        <p class="card-text">16,000 ฿ </p>
-                        <a href="#" data-name="nike-air-max-97-silver-bul" data-price="16000" class="btn btn-primary add-to-cart" data-toggle="modal"
-                        data-target="#confirm">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-16">
-                <div class="card" style="width: 18rem;margin-top:20px;">
-                    <div class="img-magnifier-container">
-                    <img id="myimage2" src="/images/products/nike/nike_2.png" class="card-img-top"  alt="nike shoes">
-                    </div>
-                    <div class="card-body bg-dark" id="nameproducts">
-                        <h5 class="card-title">AF1 x Peaceminusone</h5>
-                        <p class="card-text">20,000 ฿ </p>
-                        <a href="#" data-name="nike-af1-x-peaceminusone" data-price="20000" class="btn btn-primary add-to-cart" data-toggle="modal"
-                        data-target="#confirm">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-16">
-                <div class="card" style="width: 18rem;margin-top:20px;">
-                    <div class="img-magnifier-container">
-                    <img id="myimage3" src="/images/products/nike/nike_3.png" class="card-img-top"  alt="nike shoes">
-                    </div>
-                    <div class="card-body bg-dark" id="nameproducts">
-                        <h5 class="card-title">Air Jordan 11 "Bred"</h5>
-                        <p class="card-text">15,700 ฿ </p>
-                        <a href="#" data-name="nike-air-Jordan-11-bred" data-price="15700" class="btn btn-primary add-to-cart" data-toggle="modal"
-                        data-target="#confirm">Add to cart</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <script src="/js/shopcart.js"></script>
-    <script src="/js/magnifier_glass.js"></script>
 
-    <script>
-        magnify("myimage", 2);
-        magnify("myimage2",2);
-        magnify("myimage3", 2);
-    </script>
-</body>
+
+                                    <script src="/js/shopcart.js"></script>
+        </body>

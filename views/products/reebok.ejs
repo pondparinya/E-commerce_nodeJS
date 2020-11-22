@@ -1,64 +1,40 @@
 <head>
     <%- include ('../partials/head') -%>
-    <title>REEBOK</title>
+        <title>GUCCI</title>
 </head>
 <%- include ('../partials/nav') -%>
-<%- include('../partials/size') %>
-<body>
+    <%- include('../partials/size') %>
 
-    <%- include ('../partials/promotions') -%>
-    <img src="/images/products/reebok/reebok.gif" style="margin-top: 20px;" class="w-100">
+        <body>
 
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-md-16">
-                <div class="card" style="width: 18rem; margin-top:20px;">
-                    <div class="img-magnifier-container">
-                    <img id="myimage" src="/images/products/reebok/reebok_1.png" class="card-img-top"  alt="reebok shoes">
+            <%- include ('../partials/promotions') -%>
+                <img src="/images/products/gucci/gucci.gif" style="margin-top: 20px;" class="w-100">
+                
+                        <div class="container">
+                            <div class="row justify-content-between">
+                                <% products.forEach(function(product){ %>
+                                    <% if (product.brand == "Reebok"){ %>
+                            <div class="col-md-16">
+                                
+                                <div class="card" style="width: 18rem;margin-top:20px;">
+                                    <a href="#"><img src="<%= product.img  %> " class="card-img-top" alt="gucci shoes"></a>
+                                    <div class="card-body bg-dark" id="nameproducts">
+                                        <h5 class="card-title">
+                                            <%= product.nameproducts %>
+                                        </h5>
+                                        <p class="card-text">
+                                            <%= product.price %>
+                                        </p>
+                                        <a href="#" data-name="addas-yeezy" data-price="10000" class="btn btn-primary add-to-cart">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+                                <% }) %>
+                        </div>
                     </div>
-                    <div class="card-body bg-dark" id="nameproducts">
-                        <h5 class="card-title">Pump Supreme (White)</h5>
-                        <p class="card-text">10,000 ฿</p>
-                        <a href="#" data-name="reebok-pump-supreme-white" data-price="10000" class="btn btn-primary add-to-cart"data-toggle="modal"
-                        data-target="#confirm">Add to cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-16">
-                <div class="card" style="width: 18rem;margin-top:20px;">
-                    <div class="img-magnifier-container">
-                    <img id="myimage2" src="/images/products/reebok/reebok_2.png" class="card-img-top"  alt="reebok shoes">
-                    </div>
-                    <div class="card-body bg-dark" id="nameproducts">
-                        <h5 class="card-title">Pump x Tom & Jerry</h5>
-                        <p class="card-text">10,000 ฿</p>
-                        <a href="#" data-name="reebok-pump-tom-jerry" data-price="10000" class="btn btn-primary add-to-cart"data-toggle="modal"
-                        data-target="#confirm">Add to cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-16">
-                <div class="card" style="width: 18rem;margin-top:20px;">
-                    <div class="img-magnifier-container">
-                    <img id="myimage3" src="/images/products/reebok/reebok_3.png" class="card-img-top"  alt="reebok shoes">
-                    </div>
-                    <div class="card-body bg-dark" id="nameproducts">
-                        <h5 class="card-title">Vetement x Instapump fury</h5>
-                        <p class="card-text">30,000 ฿</p>
-                        <a href="#" data-name="reebok-vetement-instapump" data-price="30000" class="btn btn-primary add-to-cart"data-toggle="modal"
-                        data-target="#confirm">Add to cart</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <script src="/js/shopcart.js"></script>
-    <script src="/js/magnifier_glass.js"></script>
 
-    <script>
-        magnify("myimage", 2);
-        magnify("myimage2",2);
-        magnify("myimage3", 2);
-    </script>
-</body>
+
+                                    <script src="/js/shopcart.js"></script>
+        </body>

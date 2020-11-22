@@ -1,63 +1,40 @@
 <head>
     <%- include ('../partials/head') -%>
-    <title>BALENCIAGA</title>
+        <title>GUCCI</title>
 </head>
 <%- include ('../partials/nav') -%>
-<%- include('../partials/size') %>
-<body>
+    <%- include('../partials/size') %>
 
-    <%- include ('../partials/promotions') -%>
-    <img src="/images/products/balenciaga/Best_Sell.gif" style="margin-top: 20px;" class="w-100">
+        <body>
 
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-md-16">
-                <div class="card" style="width: 18rem; margin-top:20px;">
-                    <div class="img-magnifier-container">
-                    <img id="myimage" src="/images/products/balenciaga/ban_1.png" class="card-img-top" alt="balen shoes">
-                </div>
-                    <div class="card-body bg-dark" id="nameproducts">
-                        <h5 class="card-title">Triple S Sneaker</h5>
-                        <p class="card-text">37,000 ฿</p>
-                        <a href="#" data-name="balenciaga-Triple-S" data-price="37000" data-toggle="modal"
-                        data-target="#confirm" class="btn btn-primary add-to-cart">Add to Cart</a>
+            <%- include ('../partials/promotions') -%>
+                <img src="/images/products/gucci/gucci.gif" style="margin-top: 20px;" class="w-100">
+                
+                        <div class="container">
+                            <div class="row justify-content-between">
+                                <% products.forEach(function(product){ %>
+                                    <% if (product.brand == "Balenciaga"){ %>
+                            <div class="col-md-16">
+                                
+                                <div class="card" style="width: 18rem;margin-top:20px;">
+                                    <a href="#"><img src="<%= product.img  %> " class="card-img-top" alt="gucci shoes"></a>
+                                    <div class="card-body bg-dark" id="nameproducts">
+                                        <h5 class="card-title">
+                                            <%= product.nameproducts %>
+                                        </h5>
+                                        <p class="card-text">
+                                            <%= product.price %>
+                                        </p>
+                                        <a href="#" data-name="addas-yeezy" data-price="10000" class="btn btn-primary add-to-cart">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+                                <% }) %>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-16">
-                <div class="card" style="width: 18rem;margin-top:20px;">
-                    <div class="img-magnifier-container">
-                    <img id="myimage2" src="/images/products/balenciaga/ban_2.png" class="card-img-top" alt="balen shoes">
-                    </div>
-                    <div class="card-body bg-dark" id="nameproducts">
-                        <h5 class="card-title">Track Sneaker</h5>
-                        <p class="card-text">31,000 ฿</p>
-                        <a href="#" data-name="balenciaga-Track-Sneaker" data-price="31000" class="btn btn-primary add-to-cart " data-toggle="modal"
-                        data-target="#confirm">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-16">
-                <div class="card" style="width: 18rem;margin-top:20px;">
-                    <div class="img-magnifier-container">
-                    <img id="myimage3" src="/images/products/balenciaga/ban_3.png" class="card-img-top" alt="balen shoes">
-                    </div>
-                    <div class="card-body bg-dark" id="nameproducts">
-                        <h5 class="card-title">Speed Sneaker</h5>
-                        <p class="card-text">37,000 ฿ </p>
-                        <a href="#" data-name="balenciaga-speed-sneaker" data-price="37000" class="btn btn-primary add-to-cart">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <script src="/js/shopcart.js"></script>
-    <script src="/js/magnifier_glass.js"></script>
 
-    <script>
-        magnify("myimage", 2);
-        magnify("myimage2",2);
-        magnify("myimage3", 2);
-    </script>
-</body>
+
+                                    <script src="/js/shopcart.js"></script>
+        </body>

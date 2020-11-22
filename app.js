@@ -5,7 +5,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-var mongodb = require('mongod');
+var productdb = require('./models/products')
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 var passport = require('passport');
@@ -16,6 +16,8 @@ var productsRouter = require('./routes/products');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/admin');
+var db = require('monk')('mongodb+srv://ecommerce:ecommerce@cluster0.idq5h.mongodb.net/users?retryWrites=true&w=majority');
+
 var app = express();
 app.use(session({
         secret: 'secret',
@@ -38,8 +40,7 @@ app.use(passport.session());
 // Share object
 app.get('*', function(req, res, next) {
     res.locals.users = req.user;
-    // res.locals.Admin = req.user.admin || null
-    // res.locals.Admin = req.user.admin;
+    res.locals.products = req.params.product
     next();
 });
 

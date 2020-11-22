@@ -1,32 +1,82 @@
 var express = require('express');
 var router = express.Router();
+var db = require('monk')('mongodb+srv://ecommerce:ecommerce@cluster0.idq5h.mongodb.net/users?retryWrites=true&w=majority');
 
 
 
 router.get('/adidas', function(req, res) {
-    res.render('products/adidas')
+    var products = db.get('products');
+    products.find({}, {}, function(err, product) {
+        res.render('products/adidas', {
+            products: product
+        });
+    })
 });
 router.get('/balenciaga', function(req, res) {
-    res.render('products/balenciaga')
+    var products = db.get('products');
+    products.find({}, {}, function(err, product) {
+        res.render('products/balenciaga', {
+            products: product
+        });
+    })
+
 });
 router.get('/converse', function(req, res) {
-    res.render('products/converse')
+    var products = db.get('products');
+    products.find({}, {}, function(err, product) {
+        res.render('products/converse', {
+            products: product
+        });
+    })
+
 });
 router.get('/amiri', function(req, res) {
-    res.render('products/amiri')
+    var products = db.get('products');
+    products.find({}, {}, function(err, product) {
+        res.render('products/amiri', {
+            products: product
+        });
+    })
+
 });
 router.get('/gucci', function(req, res) {
-    res.render('products/gucci')
+    var products = db.get('products');
+    products.find({}, {}, function(err, product) {
+        res.render('products/gucci', {
+            products: product
+        });
+    })
+
 });
 router.get('/nike', function(req, res) {
-    res.render('products/nike')
+    var products = db.get('products');
+    products.find({}, {}, function(err, product) {
+        res.render('products/nike', {
+            products: product
+        });
+    })
+
 });
 router.get('/reebok', function(req, res) {
-    res.render('products/reebok')
+    var products = db.get('products');
+    products.find({}, {}, function(err, product) {
+        res.render('products/reebok', {
+            products: product
+        });
+    })
+
 });
 router.get('/vans', function(req, res) {
-    res.render('products/vans')
+    var products = db.get('products');
+    products.find({}, {}, function(err, product) {
+        res.render('products/vans', {
+            products: product
+        });
+    })
+
 });
+
+
 
 
 

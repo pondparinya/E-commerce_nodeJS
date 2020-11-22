@@ -1,70 +1,40 @@
 <head>
     <%- include ('../partials/head') -%>
-    <title>CONVERSE</title>
+        <title>GUCCI</title>
 </head>
 <%- include ('../partials/nav') -%>
-<%- include('../partials/size') %>
+    <%- include('../partials/size') %>
 
-<body>
+        <body>
 
-    <%- include ('../partials/promotions') -%>
-    <img src="/images/products/converse/convers.gif" style="margin-top: 20px;" class="w-100">
+            <%- include ('../partials/promotions') -%>
+                <img src="/images/products/gucci/gucci.gif" style="margin-top: 20px;" class="w-100">
+                
+                        <div class="container">
+                            <div class="row justify-content-between">
+                                <% products.forEach(function(product){ %>
+                                    <% if (product.brand == "Converse"){ %>
+                            <div class="col-md-16">
+                                
+                                <div class="card" style="width: 18rem;margin-top:20px;">
+                                    <a href="#"><img src="<%= product.img  %> " class="card-img-top" alt="gucci shoes"></a>
+                                    <div class="card-body bg-dark" id="nameproducts">
+                                        <h5 class="card-title">
+                                            <%= product.nameproducts %>
+                                        </h5>
+                                        <p class="card-text">
+                                            <%= product.price %>
+                                        </p>
+                                        <a href="#" data-name="addas-yeezy" data-price="10000" class="btn btn-primary add-to-cart">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+                                <% }) %>
+                        </div>
+                    </div>
 
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-md-16">
-                <div class="card" style="width: 18rem; margin-top:20px;">
-                    <div class="img-magnifier-container">
-                        <img id="myimage" src="/images/products/converse/con_1.png" class="card-img-top"
-                            alt="converse shoes">
-                    </div>
-                    <div class="card-body bg-dark" id="nameproducts">
-                        <h5 class="card-title">Chuck 70 x Off-White (hi)</h5>
-                        <p class="card-text">38,000 ฿</p>
-                        <a href="#" data-name="converse-chuck-70" data-price="38000" class="btn btn-primary add-to-cart"
-                            data-toggle="modal" data-target="#confirm">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-16">
-                <div class="card" style="width: 18rem;margin-top:20px;">
-                    <div class="img-magnifier-container">
-                        <img id="myimage2" src="/images/products/converse/con_2.png" class="card-img-top"
-                            alt="converse  shoes">
-                    </div>
-                    <div class="card-body bg-dark" id="nameproducts">
-                        <h5 class="card-title">Jack Purcell (Indonesia)</h5>
-                        <p class="card-text">2,400 ฿</p>
-                        <a href="#" data-name="converse-jack-purcell-indonesia" data-price="2400"
-                            class="btn btn-primary add-to-cart" data-toggle="modal" data-target="#confirm">Add to
-                            Cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-16">
-                <div class="card" style="width: 18rem;margin-top:20px;">
-                    <div class="img-magnifier-container">
-                        <img id="myimage3" src="/images/products/converse/con_3.png" class="card-img-top"
-                            alt="converse shoes">
-                    </div>
-                    <div class="card-body bg-dark" id="nameproducts">
-                        <h5 class="card-asd">One Star OX</h5>
-                        <p class="card-text">3,000 ฿</p>
-                        <a href="#" data-name="converse-one-star-ox" data-price="3000"
-                            class="btn btn-primary " data-toggle="modal" data-target="#confirm">Add to
-                            Cart</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <script src="/js/shopcart.js"></script>
-    <script src="/js/magnifier_glass.js"></script>
 
-    <script>
-        magnify("myimage", 2);
-        magnify("myimage2", 2);
-        magnify("myimage3", 2);
-    </script>
-</body>
+                                    <script src="/js/shopcart.js"></script>
+        </body>
