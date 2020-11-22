@@ -3,40 +3,41 @@
         <title>ADIDAS</title>
 </head>
 <%- include ('../partials/nav') -%>
+    <%- include('../partials/size') %>
 
-    <body>
+        <body>
 
-        <%- include ('../partials/promotions') -%>
-            <img src="/images/products/adidas/adi.gif" style="margin-top: 20px;" class="w-100">
+            <%- include ('../partials/promotions') -%>
+                <img src="/images/products/adidas/adi.gif" style="margin-top: 20px;" class="w-100">
 
-            <div class="container">
-                <%products.forEach(function(product){ %>
-                    <% if (product.brand == "Adidas"){ %>
-                        <div class="container">
-                            <div class="col-md-16">
-                                <div class="card" style="width: 18rem;margin-top:20px;">
-                                    <img src="<%= product.img  %> " class="card-img-top" alt="gucci shoes">
-                                    <div class="card-body">
-                                        <h5 class="card-title">
-                                            <%= product.nameproducts %>
-                                        </h5>
-                                        <p class="card-text">
-                                            <%= product.price %>
-                                        </p>
-                                        <a href="#" data-name="addas-yeezy" data-price="10000" class="btn btn-primary add-to-cart">Go somewhere</a>
+                <div class="container">
+                    <%products.forEach(function(product){ %>
+                        <% if (product.brand == "Adidas"){ %>
+                            <div class="container">
+                                <div class="col-md-16">
+                                    <div class="card" style="width: 18rem;margin-top:20px;">
+                                        <img src="<%= product.img  %> " class="card-img-top" alt="gucci shoes">
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                <%= product.nameproducts %>
+                                            </h5>
+                                            <p class="card-text">
+                                                <%= product.price %>
+                                            </p>
+                                            <a href="#" data-name="addas-yeezy" data-price="10000" class="btn btn-primary add-to-cart">Go somewhere</a>
+                                        </div>
                                     </div>
                                 </div>
+                                <% } %>
+                                    <% }) %>
                             </div>
-                            <% } %>
-                                <% }) %>
-                        </div>
 
-                        <script src="/js/shopcart.js"></script>
-                        <script src="/js/magnifier_glass.js"></script>
+                            <script src="/js/shopcart.js"></script>
+                            <script src="/js/magnifier_glass.js"></script>
 
-                        <script>
-                            /* Initiate Magnify Function
-                                                                                            with the id of the image, and the strength of the magnifier glass:*/
-                            magnify("myimage", 2);
-                        </script>
-    </body>
+                            <script>
+                                /* Initiate Magnify Function
+                                                                                                                            with the id of the image, and the strength of the magnifier glass:*/
+                                magnify("myimage", 2);
+                            </script>
+        </body>
