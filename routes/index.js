@@ -1,15 +1,20 @@
 var express = require('express');
 var router = express.Router();
 const User = require('../models/users');
+const productdb = require('../models/products')
 const bcrypt = require('bcryptjs');
 var passport = require('passport');
-const auth = require('../config/auth');
-const isAdmin = auth.isAdmin
+const { isAdmin } = require('../config/auth');
+var db = require('monk')('mongodb+srv://ecommerce:ecommerce@cluster0.idq5h.mongodb.net/users?retryWrites=true&w=majority');
+
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('pages/index');
+    res.render('pages/index')
 });
+
+
 ////////////////////////////////////////////////////////////////////////
 // Login Page
 router.get('/login', (req, res, next) => {

@@ -4,6 +4,8 @@ mongoose.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
+var db = require('monk')('mongodb+srv://ecommerce:ecommerce@cluster0.idq5h.mongodb.net/users?retryWrites=true&w=majority');
+
 
 var productsSchema = new mongoose.Schema({
     brand: { type: String },

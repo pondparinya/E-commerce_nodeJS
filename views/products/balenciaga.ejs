@@ -1,48 +1,35 @@
 <head>
     <%- include ('../partials/head') -%>
-    <title>BALENCIAGA</title>
+        <title>BALENCIAGA</title>
 </head>
 <%- include ('../partials/nav') -%>
 
-<body>
+    <body>
 
-    <%- include ('../partials/promotions') -%>
-    <img src="/images/products/balenciaga/Best_Sell.gif" style="margin-top: 20px;" class="w-100">
+        <%- include ('../partials/promotions') -%>
+            <img src="/images/products/balenciaga/Best_Sell.gif" style="margin-top: 20px;" class="w-100">
 
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-md-16">
-                <div class="card" style="width: 18rem; margin-top:20px;">
-                    <img src="/images/products/balenciaga/ban_1.png" class="card-img-top"  alt="balen shoes">
-                    <div class="card-body">
-                        <h5 class="card-title">Triple S Sneaker</h5>
-                        <p class="card-text">37,000 ฿</p>
-                        <a href="#" data-name="addas-yeezy" data-price="10000"  class="btn btn-primary add-to-cart">เพิ่มลงตะกร้า</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-16">
-                <div class="card" style="width: 18rem;margin-top:20px;">
-                    <img src="/images/products/balenciaga/ban_2.png" class="card-img-top"  alt="balen shoes">
-                    <div class="card-body">
-                        <h5 class="card-title">Track Sneaker</h5>
-                        <p class="card-text">31,000 ฿</p>
-                        <a href="#" data-name="addas-yeezy" data-price="10000"  class="btn btn-primary add-to-cart">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-16">
-                <div class="card" style="width: 18rem;margin-top:20px;">
-                    <img src="/images/products/balenciaga/ban_3.png" class="card-img-top"  alt="balen shoes">
-                    <div class="card-body">
-                        <h5 class="card-title">Speed Sneaker</h5>
-                        <p class="card-text">37,000 ฿ </p>
-                        <a href="#" data-name="addas-yeezy" data-price="10000"  class="btn btn-primary add-to-cart">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+            <div class="container">
+                <% products.forEach(function(product){ %>
+                    <% if (product.brand == "Balenciaga"){ %>
+                        <div class="container">
+                            <div class="col-md-16">
+                                <div class="card" style="width: 18rem;margin-top:20px;">
+                                    <img src="<%= product.img  %> " class="card-img-top" alt="gucci shoes">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <%= product.nameproducts %>
+                                        </h5>
+                                        <p class="card-text">
+                                            <%= product.price %>
+                                        </p>
+                                        <a href="#" data-name="addas-yeezy" data-price="10000" class="btn btn-primary add-to-cart">Go somewhere</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+                                <% }) %>
+                        </div>
 
-    <script src="/js/shopcart.js"></script>
-</body>
+                        <script src="/js/shopcart.js"></script>
+    </body>

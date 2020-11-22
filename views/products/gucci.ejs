@@ -6,41 +6,29 @@
 
     <body>
 
-    <%- include ('../partials/promotions') -%>
-    <img src="/images/products/gucci/gucci.gif" style="margin-top: 20px;" class="w-100">
+        <%- include ('../partials/promotions') -%>
+            <img src="/images/products/gucci/gucci.gif" style="margin-top: 20px;" class="w-100">
+            <% products.forEach(function(product){ %>
+                <% if (product.brand == "Gucci"){ %>
+                    <div class="container">
+                        <div class="col-md-16">
+                            <div class="card" style="width: 18rem;margin-top:20px;">
+                                <img src="<%= product.img  %> " class="card-img-top" alt="gucci shoes">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <%= product.nameproducts %>
+                                    </h5>
+                                    <p class="card-text">
+                                        <%= product.price %>
+                                    </p>
+                                    <a href="#" data-name="addas-yeezy" data-price="10000" class="btn btn-primary add-to-cart">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                            <% }) %>
 
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-md-16">
-                <div class="card" style="width: 18rem; margin-top:20px;">
-                    <img src="/images/products/gucci/guc_1.png" class="card-img-top"  alt="gucci shoes">
-                    <div class="card-body">
-                        <h5 class="card-title">Ace Embroidered</h5>
-                        <p class="card-text">25,000 ฿ </p>
-                        <a href="#" data-name="addas-yeezy" data-price="10000" class="btn btn-primary add-to-cart">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-16">
-                <div class="card" style="width: 18rem;margin-top:20px;">
-                    <img src="/images/products/gucci/guc_2.png" class="card-img-top"  alt="gucci shoes">
-                    <div class="card-body">
-                        <h5 class="card-title">Rhyton Gucci logo</h5>
-                        <p class="card-text">32,000 ฿</p>
-                        <a href="#" data-name="addas-yeezy" data-price="10000" class="btn btn-primary add-to-cart">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-16">
-                <div class="card" style="width: 18rem;margin-top:20px;">
-                    <img src="/images/products/gucci/guc_3.png" class="card-img-top"  alt="gucci shoes">
-                    <div class="card-body">
-                        <h5 class="card-title">Ace Distressed</h5>
-                        <p class="card-text">33,000 ฿</p>
-                        <a href="#" data-name="addas-yeezy" data-price="10000" class="btn btn-primary add-to-cart">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
 
-            <script src="/js/shopcart.js"></script>
+
+                                <script src="/js/shopcart.js"></script>
     </body>
