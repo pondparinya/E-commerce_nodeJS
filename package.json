@@ -19,6 +19,7 @@
         "jade": "^1.11.0",
         "mongod": "^2.0.0",
         "mongoose": "^5.10.15",
+        "monk": "^7.3.2",
         "morgan": "^1.9.1",
         "passport": "^0.4.1",
         "passport-http": "^0.3.0",

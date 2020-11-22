@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const User = require('../models/model');
+const User = require('../models/users');
 const bcrypt = require('bcryptjs');
 var passport = require('passport');
 const auth = require('../config/auth');
@@ -31,16 +31,6 @@ router.get('/logout', function(req, res, next) {
     res.redirect('/')
 });
 ////////////////////////////////////////////////////////////////////////
-
-router.get('/admin', (req, res, next) => {
-    res.render('pages/admin');
-});
-router.get('/adminnav', (req, res, next) => {
-    res.render('partials/adminnav');
-});
-router.get('/add_product', isAdmin, (req, res, next) => {
-    res.render('pages/add_product');
-});
 
 
 ////////////////////////////////////////////////////////////////////////

@@ -15,6 +15,7 @@ var flash = require('connect-flash');
 var productsRouter = require('./routes/products');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var adminRouter = require('./routes/admin');
 var app = express();
 app.use(session({
         secret: 'secret',
@@ -62,6 +63,7 @@ mongoose.connect(url, {
 app.use('/products', productsRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/admin', adminRouter);
 
 
 
