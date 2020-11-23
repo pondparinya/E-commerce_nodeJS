@@ -78,5 +78,9 @@ router.get('/cart', (req, res, next) => {
     res.render('pages/cart');
 });
 
+router.get('/adminnav', (req, res, next) => {
+    res.render('partials/adminnav');
+});
+
 
 module.exports = router;
