@@ -25,17 +25,21 @@
 
 
 <body>
-    <form class="form-signin" action="/admin/addbrand" method="POST">
+    <div class="container">
+    <!-- <form class="form-signin" action="/admin/addbrand" method="POST"> -->
+    <!-- <form  method="POST"> -->
+
         <div class="text-center mb-4">
             <!-- <img class="mb-4" src="/images/izle_logo2.png" alt="logo"> -->
-            <h1 class="h3 mb-3 font-weight-normal" style="margin-top:10%;">Brand Name</h1>
+            <h1 class="h3 mb-3 font-weight-normal" style="margin-top:15%;">Brand Name</h1>
         </div>
         <div class="row justify-content-center">
             <div class="form-label-group col-md-4">
                 <input type="text" id="inputUsername" name="brandname" class="form-control" placeholder="Choose Your Brand">
 
-                <div class="row justify-content-center">
-                    <button class="btn btn-lg bg-dark btn-block col-md-2" id="nameproducts" type="submit">Submit</button>
+                <div class="row justify-content-center" style="margin-top:20px">
+                    <button class="btn btn-lg bg-dark btn-block col-md-4" id="nameproducts" data-target="#brandname" data-toggle="modal">Submit</button>
+
 
                     <% if(locals.errors) { %>
                         <ul class="alert alert-danger" role="alert">
@@ -53,6 +57,12 @@
             </div>
 
     </form>
+    </div>
+
+    
+
+    <%- include('../partials/modal') %>
+    
 </body>
 
 </html>
