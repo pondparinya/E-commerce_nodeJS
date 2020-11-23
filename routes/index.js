@@ -16,7 +16,7 @@ router.get('/', function(req, res) {
     var product = db.get('products');
     product.find({}, {}, function(err, products) {
         brand.find({}, {}, function(err, brands) {
-            res.render('products/adidas', {
+            res.render('pages/index', {
                 brand: brands,
                 product: products
             })
