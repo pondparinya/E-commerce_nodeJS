@@ -16,7 +16,8 @@
 
     <%- include ('../partials/promotions') -%>
 
-        <%- include('../partials/size') %>
+        <%- include('../partials/modal') %>
+
             <img src="/images/products/adidas/adi.gif" style="margin-top: 20px;" class="w-100">
 
             <div class="container">
@@ -38,7 +39,13 @@
                                         <p class="card-text">
                                             <%= formatMoney(products.price) %>
                                         </p>
-                                        <a href="#" data-name="addas-yeezy" data-price="10000" data-toggle="modal" data-target="#confirm" class="btn btn-primary ">Add to Cart</a>
+                                        <form>
+                                            <input type="hidden" value="<%= products._id %>  " data-toggle="modal" data-target="#confirm" class="btn btn-primary ">
+                                            </input>
+                                            <input type="button" data-toggle="modal" data-target="#confirm" class="btn btn-primary ">Add to Cart
+                                            </input>
+
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -49,5 +56,6 @@
                 </div>
 
                 <script src="/js/shopcart.js"></script>
+
 
 </body>

@@ -8,12 +8,10 @@
     cursor: none;
 }
 
-div#nameproducts{
+#nameproducts{
     color: #FFB000;
 }
-button#nameproducts {
-    color: #FFB000;
-}
+
 
 a#navcolor {
     color: #FFB000;
