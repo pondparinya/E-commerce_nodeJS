@@ -14,10 +14,8 @@
 
 <body>
 
-    <%- include ('../partials/promotions') -%>
 
     <%- include('../partials/modal') %>
-    <img src="/images/products/adidas/adi.gif" style="margin-top: 20px;" class="w-100">
 
     <div class="container">
 
@@ -26,6 +24,7 @@
                 <%product.forEach(function(products){ %>
 
                 <div class="col-md-16">
+                    <img src="/images/products/adidas/adi.gif" style="margin-top: 20px;" class="w-100">
 
                     <div class="card" style="width: 18rem;margin-top:20px;">
 
@@ -38,7 +37,7 @@
                             <p class="card-text">
                                 <%= formatMoney(products.price) %>
                             </p>
-                            <a href="#" data-toggle="modal" data-target="#confirm" class="btn btn-primary ">Add to
+                            <a href="#"class="btn btn-primary add-to-cart">Add to
                                 Cart</a>
                         </div>
                     </div>

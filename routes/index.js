@@ -88,8 +88,8 @@ router.get('/:brand', function(req, res) {
     })
 });
 
-router.get('/adminnav', (req, res, next) => {
-    res.render('partials/adminnav');
+router.get('/cart', (req, res, next) => {
+    res.render('pages/cart');
 });
 
 
