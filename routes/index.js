@@ -88,9 +88,8 @@ router.get('/:brand', function(req, res) {
     })
 });
 
-router.get('/cart', (req, res, next) => {
-    res.render('pages/cart');
-});
+
+
 
 
 module.exports = router;
