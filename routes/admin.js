@@ -5,7 +5,6 @@ var { check, validationResult } = require('express-validator')
 const { isAdmin } = require('../config/auth');
 const products = require('../models/products')
 var db = require('monk')('mongodb+srv://ecommerce:ecommerce@cluster0.idq5h.mongodb.net/users?retryWrites=true&w=majority');
-
 router.get('/', isAdmin, function(req, res) {
     var brand = db.get('brands');
     brand.find({}, {}, function(err, brands) {

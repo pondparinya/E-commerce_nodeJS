@@ -75,19 +75,6 @@ router.post('/register', function(req, res, next) {
 });
 ////////////////////////////////////////////////////////////////////////
 
-router.get('/:brand', function(req, res) {
-    var brand = db.get('brands');
-    var product = db.get('products');
-    product.find({ brand: req.params.brand }, {}, function(err, products) {
-        brand.find({}, {}, function(err, brands) {
-            res.render('pages/products', {
-                brand: brands,
-                product: products,
-            })
-        })
-    })
-});
-
 
 
 

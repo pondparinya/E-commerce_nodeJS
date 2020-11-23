@@ -1,13 +1,29 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
+var { isUser } = require('../config/auth')
 var db = require('monk')('mongodb+srv://ecommerce:ecommerce@cluster0.idq5h.mongodb.net/users?retryWrites=true&w=majority');
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-    res.redirect('/users/login');
+router.get('/', isUser, function(req, res, next) {
+    res.redirect('/');
 });
 
-router.get('/cart', function(req, res, done) {
+router.get('/:brand', function(req, res) {
+    var brand = db.get('brands');
+    var product = db.get('products');
+    var Brand = req.params.brand
+    product.find({ brand: Brand }, {}, function(err, products) {
+        brand.find({}, {}, function(err, brands) {
+            res.render('pages/products', {
+                product: products,
+                brand: brands
+            });
+        })
+    })
+});
+
+
+router.get('/cart', isUser, function(req, res, done) {
     var brand = db.get('brands');
     var product = db.get('products');
     var total = 0;
