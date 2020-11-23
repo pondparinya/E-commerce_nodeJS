@@ -21,7 +21,7 @@ var db = require('monk')('mongodb+srv://ecommerce:ecommerce@cluster0.idq5h.mongo
 var app = express();
 app.use(session({
         secret: 'secret',
-        resave: true,
+        resave: false,
         saveUninitialized: true
     }))
     // view engine setup

@@ -1,7 +1,7 @@
 <head>
     <%- include ('../partials/head') -%>
         <title>
-            <%= brand.brand %>
+
         </title>
 </head>
 <header>
@@ -15,46 +15,38 @@
 <body>
 
 
-    <%- include('../partials/modal') %>
 
-        <img src="/images/products/adidas/adi.gif" style="margin-top: 20px;" class="w-100">
+    <img src="/images/products/adidas/adi.gif" style="margin-top: 20px;" class="w-100">
+
+    <div class="container">
 
         <div class="container">
-
-            <div class="container">
-                <div class="row justify-content-between">
-                    <%product.forEach(function(products){ %>
-
-                        <div class="col-md-16">
-
-                            <div class="card" style="width: 18rem;margin-top:20px;">
-
-                                <img id="myimage" src="<%= products.img  %> " class="card-img-top" alt="gucci shoes">
-
-                                <div class="card-body bg-dark" id="nameproducts">
-                                    <h5 class="card-title">
-                                        <%= products.nameproducts %>
-                                    </h5>
-                                    <p class="card-text">
-                                        <%= formatMoney(products.price) %>
-                                    </p>
-                                    <form action="/users/cart" method="POST">
-                                        <input type="hidden" value="<%= products._id %>  " data-toggle="modal" data-target="#confirm" class="btn btn-primary ">
-                                        </input>
-                                        <input type="button" value="Add to Cart" class="btn btn-primary add-to-cart">
-                                        </input>
-
-                                    </form>
-                                </div>
+            <div class="row justify-content-between">
+                <%product.forEach(function(products){ %>
+                    <div class="col-md-16">
+                        <div class="card" style="width: 18rem;margin-top:20px;">
+                            <img id="myimage" src="<%= products.img  %> " class="card-img-top" alt="gucci shoes">
+                            <div class="card-body bg-dark" id="nameproducts">
+                                <h5 class="card-title">
+                                    <%= products.nameproducts %>
+                                </h5>
+                                <p class="card-text">
+                                    <%= formatMoney(products.price) %>
+                                </p>
+                                <form class="form-group" action="/users/cart" method="post">
+                                    <input type="hidden" name="products_id" value="<%=products._id%>">
+                                    <input type="submit" value="Add to cart" class="btn btn-primary ">
+                                </form>
                             </div>
                         </div>
+                    </div>
 
-                        <% }) %>
+                    <% }) %>
 
-                </div>
             </div>
+        </div>
 
-            <script src="/js/shopcart.js"></script>
+        <script src="/js/shopcart.js"></script>
 
 
 </body>
