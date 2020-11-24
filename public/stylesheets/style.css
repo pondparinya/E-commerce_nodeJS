@@ -116,3 +116,50 @@ a#usercolor:hover {
     color: white;
     text-decoration: none;
 }
+
+
+
+
+  
+
+  /* Change hamburger icon when click */
+  .hamburger {
+    display: inline-block;
+    cursor: pointer;
+  }
+  .icon1 {
+    width: 34px;
+    height: 4px;
+    background-color: white;
+    margin: 6px 0;
+    border-radius: 5px;
+    transition: 0.4s;
+  }
+  .icon2 {
+    width: 34px;
+    height: 4px;
+    background-color: white;
+    margin: 6px 0;
+    border-radius: 5px;
+    transition: 0.4s;
+  }
+  .icon3 {
+    width: 34px;
+    height: 4px;
+    background-color: white;
+    margin: 6px 0;
+    border-radius: 5px;
+    transition: 0.4s;
+  }
+  .change .icon1 {
+    -webkit-transform: rotate(-45deg) translate(-7px, 6px);
+    transform: rotate(-45deg) translate(-7px, 6px);
+  }
+  .change .icon2 {
+    opacity: 0;
+  }
+  .change .icon3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+  /*  */
