@@ -20,26 +20,31 @@
                 <li class="nav-item ">
                     <a class="nav-link" id="navcolor" href="/users/<%= brands.brand %> " style="text-transform:uppercase">
                         <%= brands.brand%> <span class="sr-only"></span></a>
-                    <% }) %>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" id="navcolor" href="/users/cart" style="text-transform:uppercase">cart(<span
-                class="total-count"></span>)</a>
+                <% }) %>
+                    <li class="nav-item ">
+                        <a class="nav-link" id="navcolor" href="/users/cart" style="text-transform:uppercase">cart(<span
+            class="total-count"></span>)</a>
+                    </li>
 
-                </li>
         </ul>
+
         <% if (users && users.admin==1){ %>
-            <a class="py-2 d-none d-md-inline-block login-button" id="navcolor" href="/admin/addproducts" style="text-transform:uppercase">Add product</a>
-            <a class="py-2 d-none d-md-inline-block login-button" id="navcolor" href="/admin/addbrand" style="text-transform:uppercase">Add brand </a>
-            <% }%>
+            <div class="nav-item">
+                <a id="navcolor" href="/admin/addproducts" style="text-transform:uppercase">Add product</a>
+            </div>
+            <div class="nav-item">
+                <a id="navcolor" href="/admin/addbrand" style="text-transform:uppercase">Add brand </a>
+            </div>
+            <% } %>
 
 
                 <% if(!users){ %>
-                    <a class="py-2 d-none d-md-inline-block login-button" id="navcolor" href="/login" style="text-transform:uppercase">login</a>
+                    <a id="navcolor" href="/login" style="text-transform:uppercase">login</a>
                     <% } %>
                         <% if (users){ %>
                             <div class="dropdown">
-                                <a class="py-2 d-none d-md-inline-block login-button nav-link dropdown-toggle" id="usercolor" style="text-transform:uppercase; ">
+                                <a class=" dropdown-toggle" id="usercolor" style="text-transform:uppercase; ">
                                     <%= users.username%>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownId">
@@ -53,7 +58,7 @@
                                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                                 </form>
     </div>
-    </div>
+
 </nav>
 
 <body>
