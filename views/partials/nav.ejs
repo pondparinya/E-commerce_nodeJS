@@ -1,6 +1,6 @@
 <!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark  fixed-top "> -->
 
-<nav class="navbar navbar-expand-md  fixed-top navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md  stiky-top navbar-dark bg-dark">
 
 
 
@@ -30,21 +30,38 @@
         </ul>
 
         <% if (users && users.admin==1){ %>
-            <div class="nav-item">
-                <a id="navcolor" href="/admin/addproducts" style="text-transform:uppercase">Add product</a>
+
+            <div class="dropdown">
+                <a class=" dropdown-toggle" id="usercolor" style="text-transform:uppercase; margin-right: 20px; ">
+                    <%= users.username%>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="/admin/addproducts" style="text-transform:uppercase; ">Add product</a>
+
+
+
+                    <a class="dropdown-item" href="/admin/addbrand" style="text-transform:uppercase; ">Add brand </a>
+
+                    <a class="dropdown-item" href="/logout" style="text-transform:uppercase ">logout</a>
+
+                </div>
+            </div>
+
+            <!-- <div class="nav-item">
+                <a id="navcolor" href="/admin/addproducts" style="text-transform:uppercase; margin-right: 20px;">Add product</a>
             </div>
             <div class="nav-item">
-                <a id="navcolor" href="/admin/addbrand" style="text-transform:uppercase">Add brand </a>
-            </div>
+                <a id="navcolor" href="/admin/addbrand" style="text-transform:uppercase; margin-right: 20px;">Add brand </a>
+            </div> -->
             <% } %>
 
 
                 <% if(!users){ %>
-                    <a id="navcolor" href="/login" style="text-transform:uppercase">login</a>
+                    <a id="navcolor" href="/login" style="text-transform:uppercase; margin-right: 20px;">login</a>
                     <% } %>
-                        <% if (users){ %>
+                        <% if (users &&users.admin!==1){ %>
                             <div class="dropdown">
-                                <a class=" dropdown-toggle" id="usercolor" style="text-transform:uppercase; ">
+                                <a class=" dropdown-toggle" id="usercolor" style="text-transform:uppercase; margin-right: 20px; ">
                                     <%= users.username%>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownId">
