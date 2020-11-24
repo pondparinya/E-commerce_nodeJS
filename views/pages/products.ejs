@@ -1,8 +1,8 @@
 <head>
     <%- include ('../partials/head') -%>
-    <title>
+        <title>
 
-    </title>
+        </title>
 </head>
 <header>
     <%- include ('../partials/nav') -%>
@@ -17,9 +17,9 @@
 
     <img src="/images/products/adidas/adi.gif" style="margin-top: 20px;" class="w-100">
 
-        <div class="container">
-            <div class="row justify-content-between">
-                <%product.forEach(function(products){ %>
+    <div class="container">
+        <div class="row justify-content-between">
+            <%product.forEach(function(products){ %>
                 <div class="col-md-16">
                     <div class="card" style="width: 18rem;margin-top:20px;">
                         <img id="myimage" src="<%= products.img  %> " class="card-img-top" alt="gucci shoes">
@@ -28,12 +28,13 @@
                                 <%= products.nameproducts %>
                             </h5>
                             <p class="card-text" style="color: white">
-                                ฿ <%= formatMoney(products.price) %>
+                                ฿
+                                <%= formatMoney(products.price) %>
                             </p>
                             <form class="form-group" action="/users/cart" method="post">
                                 <div class="form-group">
                                     <label for="inputState" style="color:white">Size</label>
-                                    <select id="inputState" class="form-control" name="size" type="text">
+                                    <select id="inputState" class="form-control" name="size" type="number">
                                         <option>Select ...</option>
                                         <option>6 US</option>
                                         <option>6.5 US</option>
@@ -58,10 +59,10 @@
 
                 <% }) %>
 
-            </div>
         </div>
+    </div>
 
-        <script src="/js/shopcart.js"></script>
+    <script src="/js/shopcart.js"></script>
 
 
 </body>

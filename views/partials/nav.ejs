@@ -4,7 +4,6 @@
             body {
                 margin-top: 50px;
             }
-
             .navbar {
                 position: fixed;
                 right: 0;
@@ -16,10 +15,9 @@
     </style>
 </head>
 
-<nav class="navbar navbar-expand-md stiky-top navbar-dark bg-dark ">
+<nav class="navbar navbar-expand-md sticky-top navbar-dark bg-dark ">
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNav"
-        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNav" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
 
         <span class="navbar-toggler-icon"></span>
 
@@ -46,42 +44,42 @@
 
         <% if (users && users.admin==1){ %>
 
-        <div class="dropdown">
-            <a class=" dropdown-toggle" id="usercolor" style="text-transform:uppercase; margin-right: 20px; ">
-                <%= users.username%>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownId">
-                <a class="dropdown-item" href="/admin/addproducts" style="text-transform:uppercase; ">Add product</a>
+            <div class="dropdown">
+                <a class=" dropdown-toggle" id="usercolor" style="text-transform:uppercase; margin-right: 20px; ">
+                    <%= users.username%>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="/admin/addproducts" style="text-transform:uppercase; ">Add product</a>
 
 
 
-                <a class="dropdown-item" href="/admin/addbrand" style="text-transform:uppercase; ">Add brand </a>
+                    <a class="dropdown-item" href="/admin/addbrand" style="text-transform:uppercase; ">Add brand </a>
 
-                <a class="dropdown-item" href="/logout" style="text-transform:uppercase ">logout</a>
+                    <a class="dropdown-item" href="/logout" style="text-transform:uppercase ">logout</a>
 
+                </div>
             </div>
-        </div>
-        <% } %>
+            <% } %>
 
 
-        <% if(!users){ %>
-        <a id="navcolor" href="/login" style="text-transform:uppercase; margin-right: 20px;">login</a>
-        <% } %>
-        <% if (users &&users.admin!==1){ %>
-        <div class="dropdown">
-            <a class=" dropdown-toggle" id="usercolor" style="text-transform:uppercase; margin-right: 20px; ">
-                <%= users.username%>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownId">
-                <a class="dropdown-item" href="/logout" style="text-transform:uppercase ">logout</a>
+                <% if(!users){ %>
+                    <a id="navcolor" href="/login" style="text-transform:uppercase; margin-right: 20px;">login</a>
+                    <% } %>
+                        <% if (users &&users.admin!==1){ %>
+                            <div class="dropdown">
+                                <a class=" dropdown-toggle" id="usercolor" style="text-transform:uppercase; margin-right: 20px; ">
+                                    <%= users.username%>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                    <a class="dropdown-item" href="/logout" style="text-transform:uppercase ">logout</a>
 
-            </div>
-        </div>
-        <% } %>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+                                </div>
+                            </div>
+                            <% } %>
+                                <form class="form-inline my-2 my-lg-0">
+                                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                </form>
     </div>
 
 </nav>

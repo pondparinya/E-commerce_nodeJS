@@ -3,7 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 var { check, validationResult } = require('express-validator')
 const { isAdmin } = require('../config/auth');
-const products = require('../models/products')
+const modelPro = require('../models/products')
 var db = require('monk')('mongodb+srv://ecommerce:ecommerce@cluster0.idq5h.mongodb.net/users?retryWrites=true&w=majority');
 router.get('/', isAdmin, function(req, res) {
     var brand = db.get('brands');
@@ -70,7 +70,24 @@ router.post('/addbrand', [check('brandname', 'Please fill in the information').n
 });
 //////////////////////////////////////////////////
 
+// router.post('/addproducts', isAdmin, function(req, res, done) {
+//     brands = req.body.brand
+//     nameproducts = req.body.nameproducts
+//     desc = req.body.desc
+//     price = parseFloat(req.body.price).toFixed(2)
+//     img = req.body.img
+//     var size = [6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, ]
 
-
+//     var newproduct = new modelPro({
+//         brand: brands,
+//         nameproducts: nameproducts,
+//         desc: desc,
+//         price: price,
+//         size: size,
+//         img: img
+//     })
+//     newproduct.save()
+//     res.redirect('/')
+// })
 
 module.exports = router;

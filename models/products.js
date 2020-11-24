@@ -11,7 +11,7 @@ var productsSchema = new mongoose.Schema({
     nameproducts: { type: String },
     desc: { type: String },
     price: { type: Number },
-    size: { type: Number },
+    size: { type: Array },
     img: { type: String },
 });
 
