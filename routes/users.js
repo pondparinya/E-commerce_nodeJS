@@ -34,16 +34,13 @@ router.get('/cart', isUser, function(req, res, done) {
         total += (cart[item].qty * cart[item].price)
     }
     displayCart.total = total;
-    product.find({}, {}, function(err, products) {
-        brand.find({}, {}, function(err, brands) {
-            res.render('pages/cart', {
-                brand: brands,
-                product: products,
-                cart: displayCart
-            })
+    brand.find({}, {}, function(err, brands) {
+        res.render('pages/cart', {
+            brand: brands,
+            cart: displayCart
         })
     })
-});
+})
 
 router.post('/cart', function(req, res) {
     var product_id = req.body.products_id

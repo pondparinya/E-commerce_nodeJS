@@ -4,6 +4,7 @@ const User = require('../models/users');
 const bcrypt = require('bcryptjs');
 var passport = require('passport');
 const { isAdmin } = require('../config/auth');
+var { isUser } = require('../config/auth')
 var db = require('monk')('mongodb+srv://ecommerce:ecommerce@cluster0.idq5h.mongodb.net/users?retryWrites=true&w=majority');
 
 
@@ -73,6 +74,28 @@ router.post('/register', function(req, res, next) {
 
     res.redirect('/login')
 });
+
+
+router.get('/cart', function(req, res, done) {
+    var brand = db.get('brands');
+    var product = db.get('products');
+    var total = 0;
+    var cart = req.session.cart;
+    var displayCart = { item: [], total: 0 };
+    for (item in cart) {
+        displayCart.item.push(cart[item]);
+        total += (cart[item].qty * cart[item].price)
+    }
+    displayCart.total = total;
+    brand.find({}, {}, function(err, brands) {
+        res.render('pages/cart', {
+            brand: brands,
+            cart: displayCart
+        })
+    })
+})
+
+
 ////////////////////////////////////////////////////////////////////////
 
 
