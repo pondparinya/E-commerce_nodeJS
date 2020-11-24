@@ -3,25 +3,30 @@ var router = express.Router();
 var passport = require('passport');
 var { isUser } = require('../config/auth')
 const modelPro = require('../models/products')
+const _ = require('lodash')
 var db = require('monk')('mongodb+srv://ecommerce:ecommerce@cluster0.idq5h.mongodb.net/users?retryWrites=true&w=majority');
 /* GET users listing. */
 router.get('/', isUser, function(req, res, next) {
     res.redirect('/');
 });
 
+
 router.get('/:brand', function(req, res) {
     var brand = db.get('brands');
     var pro = db.get('products')
     var Brand = req.params.brand
     pro.find({ brand: Brand }, {}, function(err, products) {
+        var Uni = _.uniqBy(products, "nameproducts")
         brand.find({}, {}, function(err, brands) {
             res.render('pages/products', {
-                product: products,
-                brand: brands
+                product: Uni,
+                brand: brands,
+                size: products
             });
         })
     })
 });
+
 
 
 router.get('/cart', isUser, function(req, res, done) {

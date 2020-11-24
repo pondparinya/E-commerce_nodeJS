@@ -69,7 +69,6 @@ router.post('/addbrand', [check('brandname', 'Please fill in the information').n
     }
 });
 //////////////////////////////////////////////////
-
 // router.post('/addproducts', isAdmin, function(req, res, done) {
 //     brands = req.body.brand
 //     nameproducts = req.body.nameproducts
