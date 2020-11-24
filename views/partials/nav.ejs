@@ -1,5 +1,5 @@
 <head>
-    <!-- <style>
+    <style>
         @media (max-width: 1200px) {
             body {
                 margin-top: 50px;
@@ -13,18 +13,32 @@
                 top: 0;
             }
         }
-    </style> -->
+    </style>
 </head>
 
-<nav class="navbar navbar-expand-md stiky-top navbar-dark bg-dark ">
+<nav class="navbar navbar-expand-md sticky-top navbar-dark bg-dark ">
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNav"
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNav"
         aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
 
         <span class="navbar-toggler-icon"></span>
 
 
+    </button> -->
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNav"
+        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+
+        
+            <div class="hamburger" id="hamburger" onclick="myFunction(this)">
+                <div class="icon1"></div>
+                <div class="icon2"></div>
+                <div class="icon3"></div>
+            </div>
+        
+
     </button>
+
     <div class="collapse navbar-collapse" id="collapsibleNav">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
@@ -32,22 +46,22 @@
                 <a class="nav-link" id="navcolor" href="/" style="text-transform:uppercase">home</a>
             </li>
             <% brand.forEach(function(brands){ %>
-                <li class="nav-item ">
-                    <a class="nav-link" id="navcolor" href="/users/<%= brands.brand %> " style="text-transform:uppercase">
-                        <%= brands.brand%> <span class="sr-only"></span></a>
-                </li>
-                <% }) %>
-                    <li class="nav-item ">
-                        <a class="nav-link" id="navcolor" href="/cart" style="text-transform:uppercase">cart(<span
-            class="total-count"></span>)</a>
-                    </li>
+            <li class="nav-item ">
+                <a class="nav-link" id="navcolor" href="/users/<%= brands.brand %> " style="text-transform:uppercase">
+                    <%= brands.brand%> <span class="sr-only"></span></a>
+            </li>
+            <% }) %>
+            <li class="nav-item ">
+                <a class="nav-link" id="navcolor" href="/cart" style="text-transform:uppercase">cart(<span
+                        class="total-count"></span>)</a>
+            </li>
 
         </ul>
 
         <% if (users && users.admin==1){ %>
 
         <div class="dropdown">
-            <a class=" dropdown-toggle" id="usercolor" style="text-transform:uppercase; margin-right: 20px; ">
+            <a href="#" class=" dropdown-toggle" id="usercolor" style="text-transform:uppercase; margin-right: 20px; text-decoration: none;">
                 <%= users.username%>
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownId">
@@ -69,7 +83,7 @@
         <% } %>
         <% if (users &&users.admin!==1){ %>
         <div class="dropdown">
-            <a class=" dropdown-toggle" id="usercolor" style="text-transform:uppercase; margin-right: 20px; ">
+            <a class=" dropdown-toggle" id="usercolor" style="text-transform:uppercase; margin-right: 20px;">
                 <%= users.username%>
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownId">
@@ -84,6 +98,7 @@
         </form>
     </div>
 
+
 </nav>
 </div>
 
@@ -91,5 +106,6 @@
 
 
 
+    <script src="/js/hamburger.js"></script>
     <script src="/js/shopcart.js"></script>
 </body>
