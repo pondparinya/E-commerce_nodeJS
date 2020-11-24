@@ -95,6 +95,10 @@ router.get('/cart', function(req, res, done) {
     })
 })
 
+router.get('/test',function(req, res){
+    res.render('admin_pages/del_products');
+})
+
 
 ////////////////////////////////////////////////////////////////////////
 
