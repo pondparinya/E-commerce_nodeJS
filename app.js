@@ -46,7 +46,19 @@ app.get('*', function(req, res, next) {
     res.locals.users = req.user;
     next();
 });
-
+app.post('/payment', function(req, res) {
+    var token = req.body.stripeToken;
+    var amount = req.body.amount;
+    var charge = stripe.charges.create({
+        amount: amount,
+        currency: "usd",
+        source: token
+    }, function(err, charge) {
+        if (err) throw err
+    });
+    req.session.destroy();
+    res.redirect("/");
+})
 
 // Connect database 
 
