@@ -58,50 +58,53 @@
 
         <div class="dropdown">
             <a class="nav-link" id="navcolor" href="/cart" style="text-transform:uppercase"><img src="/images/cart01.png" width=32 height=32 alt="cart"></a>
-            <div class="dropdown-menu dropdown-menu-right" style="width:300px" aria-labelledby="dropdownId">
+            <div class="dropdown-menu dropdown-menu-right" style="width:510px; " aria-labelledby="dropdownId">
                 <% if (cart.item.length>0){ %>
                     <table>
                         <tr>
 
                             <th scope="col"></th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Price</th>
-                            <th scope="col" style="margin-left:10px">Size</th>
-                            <th scope="col" style="margin-left:10px">QTY</th>
+                            <th scope="col"><a style="margin-left:35px">Name</a></th>
+                            <th scope="col"><a style="margin-left:35px">Price</a></th>
+                            <th scope="col"><a style="margin-left:25px">Size</a></th>
+                            <th scope="col"><a style="margin-left:25px">QTY</a></th>
                         </tr>
                         <tbody>
-
                             <% cart.item.forEach(function(product){ %>
                                 <tr>
                                     <td><img src="<%= product.img%> " width="72" height="72"></td>
                                     <td class="align-middle">
-                                        <%= product.name %>
-                                    </td>
-                                    <td class="align-middle">
                                         <a>
-                                            $
-                                            <%= product.price %>
+                                            <%= product.name %>
                                         </a>
                                     </td>
                                     <td class="align-middle">
-                                        <a style="margin-left:10px">
+                                        <a style="margin-left:20px">
+                                    $
+                                    <%= product.price %>
+                                </a>
+                                    </td>
+                                    <td class="align-middle">
+                                        <a style="margin-left:20px">
                                             <%= product.size %>
                                         </a>
                                     </td>
                                     <td class="align-middle">
-                                        <a style="margin-left:10px">
+                                        <a style="margin-left:35px">
                                             <%= product.qty %>
                                         </a>
                                     </td>
                                 </tr>
-                                <% })} else {%>
+                                <% })} else { %>
+
                                     <div class="alert alert-danger" role="alert">
                                         You haven’t added any pieces to your cart, but not for long!
                                     </div>
+
                                     <% } %>
                         </tbody>
                     </table>
-
+                    <a href="/cart" class="btn btn-primary" style="margin-left: 75%; margin-bottom: 10px;">Order now</a>
 
             </div>
         </div>
@@ -113,15 +116,12 @@
                 <a href="#" class=" dropdown-toggle" id="usercolor" style="text-transform:uppercase; margin-right: 20px; text-decoration: none;">
                     <%= users.username%>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownId">
                     <a class="dropdown-item" href="/admin/addproducts" style="text-transform:uppercase; ">Add product</a>
-
-
-
                     <a class="dropdown-item" href="/admin/addbrand" style="text-transform:uppercase; ">Add brand </a>
-
+                    <a class="dropdown-item" href="#" style="text-transform:uppercase; ">delete products</a>
+                    <a class="dropdown-item" href="https://dashboard.stripe.com/test/payments?status%5B%5D=successful" target="_blank" style="text-transform:uppercase; ">check payment</a>
                     <a class="dropdown-item" href="#" style="text-transform:uppercase " data-toggle="modal" data-target="#logoutModal">logout</a>
-
                 </div>
             </div>
     </div>
@@ -135,10 +135,10 @@
             <% } %>
                 <% if (users &&users.admin!==1){ %>
                     <div class="dropdown">
-                        <a class=" dropdown-toggle" id="usercolor" style="text-transform:uppercase; margin-right: 20px;">
+                        <a href="#" class=" dropdown-toggle" id="usercolor" style="text-transform:uppercase; margin-right: 20px;">
                             <%= users.username%>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownId">
                             <a class="dropdown-item" href="#" style="text-transform:uppercase " data-toggle="modal" data-target="#logoutModal">logout</a>
 
                         </div>
