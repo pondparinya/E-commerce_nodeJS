@@ -1,109 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include ('../partials/head') -%>
-    <title>IZLE SHOP</title>
-
-    
-        <link href="/stylesheets/product.css" rel="stylesheet">
-        </head>
-
-        <body>
-            <%- include ('../partials/nav') -%>
-
-                <%- include ('../partials/promotions') -%>
-                
-                  
-                  
-                    <div class="container">
-
-                        
+<title>IZLE SHOP</title>
 
 
-                        <div class="row justify-content-center" style="margin-top:10%  ">
+<link href="/stylesheets/product.css" rel="stylesheet">
+</head>
 
-                            <div class="col-md-16">
+<body>
+    <%- include ('../partials/nav') -%>
+    <%- include ('../partials/promotions') -%>
+    <div class="container">
+        <div class="row justify-content-center" style="margin-top:10%  ">
 
-                                <% brand.forEach(function(brands){ %>
-                                    <% if (brands.brand==="Gucci"){ %>
-                                        <a href="/users/<%= brands.brand %>" target="_blank"><img src="/images/logo/gucci_logo.png" onmouseover="bigImg(this)" onmouseout="normalImg(this)" width="150" alt="addidas logo"></a>
-                                        <% }}) %>
-                            </div>
+            <div class="col-md-16">
 
-
-
-
-                            <div class="col-md-16">
-                                <% brand.forEach(function(brands){ %>
-                                    <% if (brands.brand=="Balenciaga"){ %>
-                                        <a href="/users/<%= brands.brand %>" target="_blank"><img src="/images/logo/balen_logo.png" width="150" alt=" addidas logo" onmouseover="bigImg(this)" onmouseout="normalImg(this)"></a>
-                                        <% } })%>
-                            </div>
-
-
-
-                            <div class="col-md-16">
-                                <% brand.forEach(function(brands){ %>
-                                    <% if (brands.brand=="Nike"){ %>
-                                        <a href="/users/<%= brands.brand %>" target="_blank"><img src="/images/logo/nike_logo.png" width="150" alt=" addidas logo" onmouseover="bigImg(this)" onmouseout="normalImg(this)"></a>
-                                        <% }}) %>
-                            </div>
-
-
-
-                            <div class="col-md-16">
-                                <% brand.forEach(function(brands){ %>
-                                    <% if (brands.brand=="Adidas"){ %>
-                                        <a href="/users/<%= brands.brand %>" target="_blank"><img src="/images/logo/addidas_logo.png" width="150" alt=" addidas logo" onmouseover="bigImg(this)" onmouseout="normalImg(this)"></a>
-                                        <% }}) %>
-                            </div>
-
-
-
-
-
-                            <div class="col-md-16">
-                                <% brand.forEach(function(brands){ %>
-                                    <% if (brands.brand=="Reebok"){ %>
-                                        <a href="/users/<%= brands.brand %>" target="_blank"><img src="/images/logo/reebok_logo.png" width="150" alt=" addidas logo" onmouseover="bigImg(this)" onmouseout="normalImg(this)"></a>
-                                        <% }}) %>
-                            </div>
-
-
-
-                            <div class="col-md-16">
-                                <% brand.forEach(function(brands){ %>
-                                    <% if (brands.brand=="Vans"){ %>
-                                        <a href="/users/<%= brands.brand %>" target="_blank"><img src="/images/logo/vans_logo.png" width="150" alt=" addidas logo" onmouseover="bigImg(this)" onmouseout="normalImg(this)"></a>
-                                        <% }}) %>
-                            </div>
-
-
-
-                            <div class="col-md-16">
-                                <% brand.forEach(function(brands){ %>
-                                    <% if (brands.brand=="Amiri"){ %>
-                                        <a href="/users/<%= brands.brand %>" target="_blank"><img src="/images/logo/amiri_logo2.png" width="150" alt=" addidas logo" onmouseover="bigImg(this)" onmouseout="normalImg(this)"></a>
-                                        <% }}) %>
-                            </div>
-
-
-
-                            <div class="col-md-16">
-                                <% brand.forEach(function(brands){ %>
-                                    <% if (brands.brand=="Converse"){ %>
-                                        <a href="/users/<%= brands.brand %>" target="_blank"><img src="/images/logo/converse_logo.png" width="150" alt=" addidas logo" onmouseover="bigImg(this)" onmouseout="normalImg(this)"></a>
-                                        <% }}) %>
-                            </div>
-
-
-                        </div>
-                    </div>
-                    <script src="/js/product.js"></script>
-                    
-        </body>
-
-
-        <%- include ('../partials/footer') -%>
-
+                <% brand.forEach(function(brands){ %>
+                <% if (brands.brand==="Gucci"){ %>
+                <a href="/users/<%= brands.brand %>" target="_blank"><img src="/images/logo/gucci_logo.png"
+                        onmouseover="bigImg(this)" onmouseout="normalImg(this)" width="150" alt="addidas logo"></a>
+                <% }}) %>
+            </div>
+            <div class="col-md-16">
+                <% brand.forEach(function(brands){ %>
+                <% if (brands.brand=="Balenciaga"){ %>
+                <a href="/users/<%= brands.brand %>" target="_blank"><img src="/images/logo/balen_logo.png" width="150"
+                        alt=" addidas logo" onmouseover="bigImg(this)" onmouseout="normalImg(this)"></a>
+                <% } })%>
+            </div>
+            <div class="col-md-16">
+                <% brand.forEach(function(brands){ %>
+                <% if (brands.brand=="Nike"){ %>
+                <a href="/users/<%= brands.brand %>" target="_blank"><img src="/images/logo/nike_logo.png" width="150"
+                        alt=" addidas logo" onmouseover="bigImg(this)" onmouseout="normalImg(this)"></a>
+                <% }}) %>
+            </div>
+            <div class="col-md-16">
+                <% brand.forEach(function(brands){ %>
+                <% if (brands.brand=="Adidas"){ %>
+                <a href="/users/<%= brands.brand %>" target="_blank"><img src="/images/logo/addidas_logo.png"
+                        width="150" alt=" addidas logo" onmouseover="bigImg(this)" onmouseout="normalImg(this)"></a>
+                <% }}) %>
+            </div>
+            <div class="col-md-16">
+                <% brand.forEach(function(brands){ %>
+                <% if (brands.brand=="Reebok"){ %>
+                <a href="/users/<%= brands.brand %>" target="_blank"><img src="/images/logo/reebok_logo.png" width="150"
+                        alt=" addidas logo" onmouseover="bigImg(this)" onmouseout="normalImg(this)"></a>
+                <% }}) %>
+            </div>
+            <div class="col-md-16">
+                <% brand.forEach(function(brands){ %>
+                <% if (brands.brand=="Vans"){ %>
+                <a href="/users/<%= brands.brand %>" target="_blank"><img src="/images/logo/vans_logo.png" width="150"
+                        alt=" addidas logo" onmouseover="bigImg(this)" onmouseout="normalImg(this)"></a>
+                <% }}) %>
+            </div>
+            <div class="col-md-16">
+                <% brand.forEach(function(brands){ %>
+                <% if (brands.brand=="Amiri"){ %>
+                <a href="/users/<%= brands.brand %>" target="_blank"><img src="/images/logo/amiri_logo2.png" width="150"
+                        alt=" addidas logo" onmouseover="bigImg(this)" onmouseout="normalImg(this)"></a>
+                <% }}) %>
+            </div>
+            <div class="col-md-16">
+                <% brand.forEach(function(brands){ %>
+                <% if (brands.brand=="Converse"){ %>
+                <a href="/users/<%= brands.brand %>" target="_blank"><img src="/images/logo/converse_logo.png"
+                        width="150" alt=" addidas logo" onmouseover="bigImg(this)" onmouseout="normalImg(this)"></a>
+                <% }}) %>
+            </div>
+        </div>
+    </div>
+    <script src="/js/product.js"></script>
+</body>
+<%- include ('../partials/footer') -%>
 
 </html>
