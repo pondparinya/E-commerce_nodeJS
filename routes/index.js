@@ -96,6 +96,10 @@ router.get('/cart', function(req, res, done) {
     })
 })
 
+router.post('/del_pro', function(req, res) {
+    req.session.destroy();
+    res.redirect('cart')
+})
 
 
 

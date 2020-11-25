@@ -63,29 +63,29 @@
                 </h4>
             </div>
             <div class="col-md-2">
-                <form class="form" action="" method="POST">
-                    <button type="button" class="btn btn-danger">Clear cart</button>
+                <!-- <form class="form" action="/del_pro" method="POST"> -->
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#ClearcartModal" >Clear cart</button>
+                <!-- </form> -->
+            </div>
+        </div>
+            <div class="row justify-content-center" style="margin-top: 20px;">
+                <form class="form-group" action="/payment" method="post">
+                    <script src="http://checkout.stripe.com/checkout.js" class="stripe-button" data-name="IZLE Shop"
+                        data-key="pk_test_51Hqx98I1kRWYSgPMj2J5DBfbaymaaJiFckYu1Gnp2k0LQsZQFR2kyyOkr2hkWFMOQhABEpkgexu2gLyAtxXOO0Ra00JXccQu3v"
+                        data-description="Project E-commerce" data-amount="<%= cart.total*100 %>"
+                        data-currency="baht"></script>
+                    <input type="hidden" name="amount" value="<%= cart.total*100 %>">
+
                 </form>
+                <% }else { %>
+
+                <div class="alert alert-danger" role="alert">
+                    You haven’t added any pieces to your cart, but not for long!
+                </div>
+                <% } %>
             </div>
         </div>
+        <%- include ('../partials/modal') -%>
 
-        <div class="row justify-content-center" style="margin-top: 20px;">
-            <form class="form-group" action="/payment" method="post">
-                <script src="http://checkout.stripe.com/checkout.js" class="stripe-button" data-name="IZLE Shop"
-                    data-key="pk_test_51Hqx98I1kRWYSgPMj2J5DBfbaymaaJiFckYu1Gnp2k0LQsZQFR2kyyOkr2hkWFMOQhABEpkgexu2gLyAtxXOO0Ra00JXccQu3v"
-                    data-description="Project E-commerce" data-amount="<%= cart.total*100 %>"
-                    data-currency="baht"></script>
-                <input type="hidden" name="amount" value="<%= cart.total*100 %>">
-
-            </form>
-            <% }else { %>
-
-            <div class="alert alert-danger" role="alert">
-                You haven’t added any pieces to your cart, but not for long!
-            </div>
-            <% } %>
-        </div>
-    </div>
-
-    <script src="/js/shopcart.js"></script>
+        <script src="/js/shopcart.js"></script>
 </body>
