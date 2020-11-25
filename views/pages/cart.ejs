@@ -64,10 +64,8 @@
         <script src="http://checkout.stripe.com/checkout.js"  class="stripe-button" data-name="IZLE Shop"
             data-key="pk_test_51Hqx98I1kRWYSgPMj2J5DBfbaymaaJiFckYu1Gnp2k0LQsZQFR2kyyOkr2hkWFMOQhABEpkgexu2gLyAtxXOO0Ra00JXccQu3v"
             data-description="Project E-commerce" data-amount="<%= cart.total*100 %>" data-currency="baht"></script>
-        <input type="hidden" name="amount" value="<%= cart.total*100 %>">
-        <input type="submit" class="btn btn-primary stripe-button" data-name="IZLE Shop"
-        data-key="pk_test_51Hqx98I1kRWYSgPMj2J5DBfbaymaaJiFckYu1Gnp2k0LQsZQFR2kyyOkr2hkWFMOQhABEpkgexu2gLyAtxXOO0Ra00JXccQu3v"
-        data-description="Project E-commerce" data-amount="<%= cart.total*100 %>" data-currency="baht"></input>
+        <input type="submit" name="amount" value="<%= cart.total*100 %>">
+        
     </form>
     <% }else { %>
 
