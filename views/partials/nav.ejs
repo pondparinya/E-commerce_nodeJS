@@ -16,15 +16,10 @@
     </style>
 </head>
 
-<!-- <div class="container">
-    <div class="row justify-content-end">
-        <a href="/login"><img src="images/user.png" width="28" height="28" style="margin-left: 95%; "></a>
-    </div>
-</div> -->
 
 <nav class="navbar navbar-expand-md sticky-top navbar-dark bg-dark ">
 
-
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNav"
         aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
 
@@ -37,6 +32,15 @@
 
 
     </button>
+    <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span>
+            <a class="nav-link" id="navcolor" href="/cart" style="text-transform:uppercase; margin-right:100%;"><img
+                    src="/images/cart01.png" width=32 height=32></a>
+        </span>
+    </button>
+
+    
 
     <div class="collapse navbar-collapse" id="collapsibleNav">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -50,15 +54,12 @@
                     <%= brands.brand%> <span class="sr-only"></span></a>
             </li>
             <% }) %>
-            <!-- <li class="nav-item ">
-                <a class="nav-link" id="navcolor" href="/cart" style="text-transform:uppercase">cart(<span
-                        class="total-count"></span>)</a>
-            </li> -->
+
 
         </ul>
 
-        <a class="nav-link" id="navcolor" href="/cart" style="text-transform:uppercase">cart(<span
-            class="total-count"></span>)</a>
+        <a class="nav-link" id="navcolor" href="/cart" style="text-transform:uppercase"><img src="/images/cart01.png"
+                width=32 height=32></a>
 
         <% if (users && users.admin==1){ %>
 
@@ -74,33 +75,34 @@
 
                 <a class="dropdown-item" href="/admin/addbrand" style="text-transform:uppercase; ">Add brand </a>
 
-                <a class="dropdown-item" href="/logout" style="text-transform:uppercase ">logout</a>
+                <a class="dropdown-item" href="#" style="text-transform:uppercase " data-toggle="modal"
+                    data-target="#logoutModal">logout</a>
 
             </div>
         </div>
-        
-        <% } %>
+    </div>
+
+    <% } %>
 
 
 
-        <% if(!users){ %>
-        <a id="navcolor" href="/login" style="text-transform:uppercase; margin-right: 20px;">login</a>
-        <% } %>
-        <% if (users &&users.admin!==1){ %>
-        <div class="dropdown">
-            <a class=" dropdown-toggle" id="usercolor" style="text-transform:uppercase; margin-right: 20px;">
-                <%= users.username%>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownId">
-                <a class="dropdown-item" href="/logout" style="text-transform:uppercase ">logout</a>
+    <% if(!users){ %>
+    <a id="navcolor" href="/login" style="text-transform:uppercase; margin-right: 20px;"><img src="/images/login01.png"
+            width=29 height=29></a>
+    <% } %>
+    <% if (users &&users.admin!==1){ %>
+    <div class="dropdown">
+        <a class=" dropdown-toggle" id="usercolor" style="text-transform:uppercase; margin-right: 20px;">
+            <%= users.username%>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownId">
+            <a class="dropdown-item" href="#" style="text-transform:uppercase " data-toggle="modal"
+                data-target="#logoutModal">logout</a>
 
-            </div>
         </div>
-        <% } %>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+    </div>
+    <% } %>
+
     </div>
 
 
@@ -108,9 +110,9 @@
 </div>
 
 <body>
+    <%- include ('../partials/modal') -%>
 
-
-
+    <script src="./routes/index.js"></script>
     <script src="/js/hamburger.js"></script>
     <script src="/js/shopcart.js"></script>
 </body>

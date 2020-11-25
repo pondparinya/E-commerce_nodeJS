@@ -1,10 +1,9 @@
 <head>
     <%- include ('../partials/head') -%>
-    <title>Add products</title>
+        <title>Add products</title>
 </head>
 <header>
-    <a href="/"><img src="/images/logo/prev3.png" onmouseover="this.src='/images/logo/prev4.png'"
-            onmouseout="this.src='/images/logo/prev3.png'" alt="Logo" width="80" height="70"></a>
+    <a href="/"><img src="/images/logo/prev3.png" onmouseover="this.src='/images/logo/prev4.png'" onmouseout="this.src='/images/logo/prev3.png'" alt="Logo" width="80" height="70"></a>
 </header>
 <div class="container">
     <div class="text-center mb-4">
@@ -36,17 +35,12 @@
             </div>
         </div>
 
-        <div class="row row justify-content-center">
-            <div class="form-group col-md-4">
-                <label for="">Description</label>
-                <textarea name="desc" class="form-control" cols="30" rows="4" placeholder="Description"></textarea>
-            </div>
-        </div>
+
 
         <div class="row row justify-content-center">
             <div class="form-group col-md-4">
                 <label for="inputState">Size</label>
-                <select id="inputState" class="form-control" name="size">
+                <select id="inputState" class="form-control" name="size" type="text">
                     <option>Select ...</option>
                     <option>6 US</option>
                     <option>6.5 US</option>
@@ -67,7 +61,7 @@
         <form>
             <div class="row justify-content-center">
                 <div class="form-group col-md-4">
-                    <label for="exampleFormControlFile1" >Insert Images</label>
+                    <label for="exampleFormControlFile1">Insert Images</label>
                     <input type="url" name="img" class="form-control-file" id="exampleFormControlFile1" placeholder="Link images">
                 </div>
             </div>

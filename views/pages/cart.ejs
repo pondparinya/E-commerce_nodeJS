@@ -14,26 +14,47 @@
                 <% if (cart.total <= 0){ %>
                     <div class="alert alert-danger" role="alert">
                         You haven’t added any pieces to your cart, but not for long!
-                      </div>
+                    </div>
                     <% } %>
             </div>
-           
+
             <br>
-            
+
             <div class="row justify-content-center">
                 <table class="table">
+                    <thead>
+                        <tr>
+                        
+                            <th scope="col"></th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Size</th>
+                            <th scope="col">QTY</th>
+                          </tr>
+                    </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td><img src="images/products/gucci/guc_1.png" width="72" height="72"></td>
-                        <td>Test</td>
-                        <td>Price</td>
-                        <td>Size</td>
-                        <td>QTY</td>
+                        <% cart.item.forEach(function(product){ %>
+                            <tr>
+                                <% console.log(product) %>
+                                    
+                                    <td><img src="<%= product.img%> " width="72" height="72"></td>
+                                    <td class="align-middle">
+                                        <%= product.name  %>
+                                    </td>
+                                    <td class="align-middle">
+                                        <%= product.price %>
+                                    </td>
+                                    <td class="align-middle">
+                                        <%= product.size %>
+                                    </td>
+                                    <td class="align-middle">
+                                        <%= product.qty %>
+                                    </td>
+                                    <% }) %>
                     </tbody>
-                  </table>
-                
-                
+                </table>
+
+
             </div>
         </div>
         <form action="/users/payment" method="POST" class="form-group">

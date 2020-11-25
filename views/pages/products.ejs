@@ -1,8 +1,8 @@
 <head>
     <%- include ('../partials/head') -%>
-    <title>
-
-    </title>
+        <title>
+            <%= brand.brand  %> 
+        </title>
 </head>
 <header>
     <%- include ('../partials/nav') -%>
@@ -15,27 +15,30 @@
 <body>
 
 
-    <!-- <img src="/images/products/adidas/adi.gif" style="margin-top: 20px;" class="w-100"> -->
     <%- include ('../partials/promotions') -%>
+    <img src="/images/products/adidas/adi.gif" style="margin-top: 20px;" class="w-100">
 
         <div class="container">
             <div class="row justify-content-center">
                 <%product.forEach(function(products){ %>
-                <div class="col-md-4">
-                    <div class="card" style="width: 18rem;margin-top:20px;">
-                        <img id="myimage" src="<%= products.img  %> " class="card-img-top" alt="gucci shoes">
-                        <div class="card-body bg-dark" id="nameproducts">
-                            <h5 class="card-title">
-                                <%= products.nameproducts %>
-                            </h5>
-                            <p class="card-text" style="color: white">
-                                ฿ <%= formatMoney(products.price) %>
-                            </p>
-                            <form class="form-group" action="/users/cart" method="post">
-                                <div class="form-group">
-                                    <label for="inputState" style="color:white">Size</label>
-                                    <select id="inputState" class="form-control" name="size" type="text">
-                                        <option>Select ...</option>
+                    <div class="col-md-4">
+                        <div class="card" style="width: 18rem;margin-top:20px;">
+                            <img id="myimage" src="<%= products.img  %> " class="card-img-top" alt="gucci shoes">
+                            <div class="card-body bg-dark" id="nameproducts">
+                                <h5 class="card-title">
+                                    <%= products.nameproducts %>
+                                </h5>
+                                <p class="card-text" style="color: white">
+                                    ฿
+                                    <%= formatMoney(products.price) %>
+
+                                </p>
+                                <form class="form-group" action="/users/cart" method="post">
+                                    <div class="form-group">
+                                        <label for="inputState" style="color:white">Size</label>
+                                        <select id="inputState" class="form-control" name="size" type="number">
+                                           
+                                       
                                         <option>6 US</option>
                                         <option>6.5 US</option>
                                         <option>7 US</option>
@@ -48,17 +51,15 @@
                                         <option>10.5 US</option>
                                         <option>11 US</option>
                                     </select>
-                                </div>
-                                <input type="hidden" name="products_id" value="<%=products._id%>">
-                                <input type="submit" value="Add to cart" class="btn btn-primary ">
+                                    </div>
+                                    <input type="hidden" name="products_id" value="<%=products._id%>">
+                                    <input type="submit" value="Add to cart" class="btn btn-primary ">
 
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <% }) %>
-
+                    <% } )%>
             </div>
         </div>
 

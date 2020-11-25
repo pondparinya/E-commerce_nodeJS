@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const User = require('../models/users');
+const modelPro = require('../models/products')
 const bcrypt = require('bcryptjs');
 var passport = require('passport');
 const { isAdmin } = require('../config/auth');
@@ -95,7 +96,8 @@ router.get('/cart', function(req, res, done) {
     })
 })
 
-router.get('/test',function(req, res){
+
+router.get('/test', function(req, res) {
     res.render('admin_pages/del_products');
 })
 
