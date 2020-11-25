@@ -22,6 +22,16 @@
 
             <div class="row justify-content-center">
                 <table class="table">
+                    <thead>
+                        <tr>
+                        
+                            <th scope="col"></th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Size</th>
+                            <th scope="col">QTY</th>
+                          </tr>
+                    </thead>
                     <tbody>
                         <% if (cart.item){ %>
                             <% cart.item.forEach(function(product){ %>
@@ -29,16 +39,16 @@
 
                                     <th scope="row">1</th>
                                     <td><img src="<%= product.img%> " width="72" height="72"></td>
-                                    <td>
+                                    <td class="align-middle">
                                         <%= product.name  %>
                                     </td>
-                                    <td>
+                                    <td class="align-middle">
                                         <%= product.price %>
                                     </td>
-                                    <td>
+                                    <td class="align-middle">
                                         <%= product.size %>
                                     </td>
-                                    <td>
+                                    <td class="align-middle">
                                         <%= product.qty %>
                                     </td>
                                     <% }) }%>
