@@ -11,27 +11,14 @@
                 <h4><b>CART</b></h4>
             </div>
             <div class="row justify-content-center">
-                <% if (cart.total <= 0){ %>
-                    <div class="alert alert-danger" role="alert">
-                        You haven’t added any pieces to your cart, but not for long!
-                    </div>
-                    <% } %>
+                <% if (cart.item.length>0){ %>
+
             </div>
 
             <br>
 
             <div class="row justify-content-center">
                 <table class="table">
-                    <thead>
-                        <tr>
-                        
-                            <th scope="col"></th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Size</th>
-                            <th scope="col">QTY</th>
-                          </tr>
-                    </thead>
                     <tbody>
                         <% if (cart.item){ %>
                             <% cart.item.forEach(function(product){ %>
@@ -39,16 +26,17 @@
 
                                     <th scope="row">1</th>
                                     <td><img src="<%= product.img%> " width="72" height="72"></td>
-                                    <td class="align-middle">
+                                    <td>
                                         <%= product.name  %>
                                     </td>
-                                    <td class="align-middle">
+                                    <td>
+                                        ฿
                                         <%= product.price %>
                                     </td>
-                                    <td class="align-middle">
+                                    <td>
                                         <%= product.size %>
                                     </td>
-                                    <td class="align-middle">
+                                    <td>
                                         <%= product.qty %>
                                     </td>
                                     <% }) }%>
@@ -56,13 +44,21 @@
                     </tbody>
                 </table>
 
-
+                <h2>Total : ฿
+                    <%= cart.total  %>
+                </h2>
             </div>
         </div>
-        <form action="/users/payment" method="POST" class="form-group">
-            <script src="http://checkout.stripe.cpm/checkout.js" class="stripe.button" data-name="IZEL" data-key="pk_test_51Hqx98I1kRWYSgPMj2J5DBfbaymaaJiFckYu1Gnp2k0LQsZQFR2kyyOkr2hkWFMOQhABEpkgexu2gLyAtxXOO0Ra00JXccQu3v">
-            </script>
-
+        <form class="form-group" action="/payment" method="post">
+            <script src="http://checkout.stripe.com/checkout.js" class="stripe-button" data-name="IZLE Shop" data-key="pk_test_51Hqx98I1kRWYSgPMj2J5DBfbaymaaJiFckYu1Gnp2k0LQsZQFR2kyyOkr2hkWFMOQhABEpkgexu2gLyAtxXOO0Ra00JXccQu3v" data-description="Project E-commerce"
+                data-amount="<%= cart.total*100 %>" data-currency="baht"></script>
+            <input type="hidden" name="amount" value="<%= cart.total*100 %>">
         </form>
-        <script src="/js/shopcart.js"></script>
+        <% }else { %>
+
+            <div class="alert alert-danger" role="alert">
+                You haven’t added any pieces to your cart, but not for long!
+            </div>
+            <% } %>
+                <script src="/js/shopcart.js"></script>
     </body>
