@@ -73,7 +73,7 @@ router.post('/register', function(req, res, next) {
         })
     });
 
-    res.redirect('/login')
+    res.redirect('/')
 });
 
 
