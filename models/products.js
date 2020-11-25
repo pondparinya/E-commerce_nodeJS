@@ -9,10 +9,9 @@ mongoose.connect(url, {
 var productsSchema = new mongoose.Schema({
     brand: { type: String },
     nameproducts: { type: String },
-    desc: { type: String },
-    price: { type: Number },
-    size: { type: Array },
-    img: { type: String },
+    price: { type: String },
+    size: { type: String },
+    img: { type: String }
 });
 
-var products = module.exports = mongoose.model('Products', productsSchema);
+var products = module.exports = mongoose.model('products', productsSchema);

@@ -1,9 +1,8 @@
-
 <head>
     <%- include ('../partials/head') -%>
-    <title>
+        <title>
 
-    </title>
+        </title>
 </head>
 <header>
 
@@ -15,38 +14,36 @@
 
 <body>
 
+    <a href="/"><img src="/images/logo/prev3.png" onmouseover="this.src='/images/logo/prev4.png'" onmouseout="this.src='/images/logo/prev3.png'" alt="Logo" width="80" height="70"></a>
 
     <div class="container">
-
-        <div class="container">
-            <div class="row justify-content-between">
-                
+        <div class="row justify-content-between">
+            <%product.forEach(function(products){ %>
                 <div class="col-md-3">
                     <div class="card" style="width: 15rem;margin-top:20px;">
-                        <img id="myimage" src="images/products/gucci/guc_1.png"class="card-img-top" width="150" height="250" alt="gucci shoes">
+                        <img id="myimage" src=" <%= products.img %> " class="card-img-top" width="150" height="250" alt="gucci shoes">
                         <div class="card-body bg-dark" id="nameproducts">
                             <h5 class="card-title">
-                                
+                                <%= products.nameproducts %>
                             </h5>
                             <p class="card-text" style="color: white">
-                                
-                            </p>
-                            <form class="form-group" action="/users/cart" method="post">
-                                <input type="hidden" name="products_id" value="">
-                                <input type="submit" value="Delete" class="btn btn-danger ">
 
+                            </p>
+                            <form class="form-group" action="/admin/del" method="post">
+                                <input type="hidden" name="product_id" value="<%= products._id%>">
+                                <input type="submit" value="Delete" class="btn btn-danger ">
                             </form>
                         </div>
                     </div>
                 </div>
-                
 
-                
+                <% })%>
 
-            </div>
+
         </div>
+    </div>
 
-        <script src="/js/shopcart.js"></script>
+    <script src="/js/shopcart.js"></script>
 
 
 </body>

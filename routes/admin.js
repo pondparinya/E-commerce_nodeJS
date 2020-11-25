@@ -67,25 +67,26 @@ router.post('/addbrand', [check('brandname', 'Please fill in the information').n
         })
     }
 });
+
+
+router.get('/del', function(req, res) {
+    var products = db.get('products');
+    modelPro.find({}, {}, function(err, pro) {
+        res.render('admin_pages/del_products', { product: pro })
+    })
+});
+
+router.post('/del', function(req, res) {
+    var products_id = req.body.product_id
+    modelPro.deleteOne({
+        _id: products_id
+    }, function(err, pro) {
+        res.redirect('/admin/del')
+    })
+});
 //////////////////////////////////////////////////
-// router.post('/addproducts', isAdmin, function(req, res, done) {
-//     brands = req.body.brand
-//     nameproducts = req.body.nameproducts
-//     desc = req.body.desc
-//     price = parseFloat(req.body.price).toFixed(2)
-//     img = req.body.img
-//     size = size.body.size
-//     modelPro.findOne({ brand: brand },function())
-//     var newproduct = new modelPro({
-//         brand: brands,
-//         nameproducts: nameproducts,
-//         desc: desc,
-//         price: price,
-//         size: size,
-//         img: img
-//     })
-//     newproduct.save()
-//     res.redirect('/')
-// })
+
+
+
 
 module.exports = router;
