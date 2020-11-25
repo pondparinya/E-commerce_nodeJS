@@ -33,10 +33,11 @@
                           </tr>
                     </thead>
                     <tbody>
-                        <% cart.item.forEach(function(product){ %>
-                            <tr>
-                                <% console.log(product) %>
-                                    
+                        <% if (cart.item){ %>
+                            <% cart.item.forEach(function(product){ %>
+                                <tr>
+
+                                    <th scope="row">1</th>
                                     <td><img src="<%= product.img%> " width="72" height="72"></td>
                                     <td class="align-middle">
                                         <%= product.name  %>
@@ -50,7 +51,26 @@
                                     <td class="align-middle">
                                         <%= product.qty %>
                                     </td>
-                                    <% }) %>
+                                    <% }) }%>
+                                        <% if (cart.items){ %>
+                                            <% cart.items.forEach(function(product){ %>
+                                                <tr>
+
+                                                    <th scope="row">1</th>
+                                                    <td><img src="<%= product.img%> " width="72" height="72"></td>
+                                                    <td>
+                                                        <%= product.name  %>
+                                                    </td>
+                                                    <td>
+                                                        <%= product.price %>
+                                                    </td>
+                                                    <td>
+                                                        <%= product.size %>
+                                                    </td>
+                                                    <td>
+                                                        <%= product.qty %>
+                                                    </td>
+                                                    <% }) }%>
                     </tbody>
                 </table>
 

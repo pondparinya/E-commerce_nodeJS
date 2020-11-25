@@ -13,15 +13,15 @@ router.get('/', isUser, function(req, res, next) {
 
 router.get('/:brand', function(req, res) {
     var brand = db.get('brands');
-    var pro = db.get('products')
+    var pro = db.get('products');
     var Brand = req.params.brand
     pro.find({ brand: Brand }, {}, function(err, products) {
-        var Uni = _.uniqBy(products, "nameproducts")
         brand.find({}, {}, function(err, brands) {
+            // var Uni = _.uniqBy(brands, "brand")
             res.render('pages/products', {
-                product: Uni,
+                product: products,
                 brand: brands,
-                size: products
+
             });
         })
     })
@@ -39,6 +39,10 @@ router.get('/cart', isUser, function(req, res, done) {
         displayCart.item.push(cart[item]);
         total += (cart[item].qty * cart[item].price)
     }
+    for (items in cart) {
+        displayCart.item.push(cart[items]);
+        total += (cart[items].qty * cart[items].price)
+    }
     displayCart.total = total;
     brand.find({}, {}, function(err, brands) {
         res.render('pages/cart', {
@@ -50,6 +54,8 @@ router.get('/cart', isUser, function(req, res, done) {
 
 router.post('/cart', function(req, res) {
     var product_id = req.body.products_id
+    var sizereq = req.body.size
+    var namereq = req.body.nameproducts
     var product = db.get('products');
     req.session.cart = req.session.cart || {};
     var cart = req.session.cart
@@ -57,27 +63,25 @@ router.post('/cart', function(req, res) {
         _id: product_id
     }, {}, function(err, products) {
         if (cart[product_id]) {
-            cart[product_id].qty++;
-            res.redirect('/')
+            cart[product_id].qty++
+                res.redirect('/')
         } else {
             products.forEach(function(item) {
                 cart[product_id] = {
                     id: item._id,
                     brand: item.brand,
                     name: item.nameproducts,
-                    desc: item.desc,
                     price: item.price,
                     img: item.img,
-                    size: item.size,
+                    size: sizereq,
                     qty: 1
                 }
             })
             res.redirect('/')
         }
-    });
-
-
+    })
 });
+
 
 
 
