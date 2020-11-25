@@ -61,10 +61,11 @@
         </div>
     <div class="row justify-content-center" style="margin-top: 20px;">
     <form class="form-group" action="/payment" method="post">
-        <script src="http://checkout.stripe.com/checkout.js" class="stripe-button" data-name="IZLE Shop"
+        <script src="http://checkout.stripe.com/checkout.js"  class="stripe-button" data-name="IZLE Shop"
             data-key="pk_test_51Hqx98I1kRWYSgPMj2J5DBfbaymaaJiFckYu1Gnp2k0LQsZQFR2kyyOkr2hkWFMOQhABEpkgexu2gLyAtxXOO0Ra00JXccQu3v"
             data-description="Project E-commerce" data-amount="<%= cart.total*100 %>" data-currency="baht"></script>
         <input type="hidden" name="amount" value="<%= cart.total*100 %>">
+        
     </form>
     <% }else { %>
 
