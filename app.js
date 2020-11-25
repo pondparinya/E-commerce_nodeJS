@@ -11,12 +11,9 @@ var bcrypt = require('bcryptjs');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 require('./config/passport');
-var flash = require('connect-flash');
-var productsRouter = require('./routes/products');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/admin');
-var db = require('monk')('mongodb+srv://ecommerce:ecommerce@cluster0.idq5h.mongodb.net/users?retryWrites=true&w=majority');
 var stripe = require('stripe')('sk_test_51Hqx98I1kRWYSgPMaU99FfeIy75Z9RwgbryWd8Yz7rTeEqlh8FJrHYHIhNu8dSVghT59SAhcUXK9CZDkn7uoXSmH00nxqpfgNp')
 
 
@@ -76,7 +73,6 @@ mongoose.connect(url, {
     })
 
 // Use URL & Router 
-app.use('/products', productsRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);

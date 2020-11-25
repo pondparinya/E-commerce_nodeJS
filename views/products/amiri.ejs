@@ -5,17 +5,17 @@
 <%- include ('../partials/nav') -%>
     <!-- <%- include('../partials/size') %> -->
 
-        <body>
+    <body>
 
-            <%- include ('../partials/promotions') -%>
-                <img src="/images/products/gucci/gucci.gif" style="margin-top: 20px;" class="w-100">
-                
-                        <div class="container">
-                            <div class="row justify-content-between">
-                                <% products.forEach(function(product){ %>
-                                    <% if (product.brand == "Amiri"){ %>
+        <%- include ('../partials/promotions') -%>
+            <!-- <img src="/images/products/gucci/gucci.gif" style="margin-top: 20px;" class="w-100"> -->
+
+            <div class="container">
+                <div class="row justify-content-between">
+                    <% products.forEach(function(product){ %>
+                        <% if (product.brand == "Amiri"){ %>
                             <div class="col-md-16">
-                                
+
                                 <div class="card" style="width: 18rem;margin-top:20px;">
                                     <a href="#"><img src="<%= product.img  %> " class="card-img-top" alt="gucci shoes"></a>
                                     <div class="card-body bg-dark" id="nameproducts">
@@ -31,10 +31,10 @@
                             </div>
                             <% } %>
                                 <% }) %>
-                        </div>
-                    </div>
+                </div>
+            </div>
 
 
 
-                                    <script src="/js/shopcart.js"></script>
-        </body>
+            <script src="/js/shopcart.js"></script>
+    </body>

@@ -14,14 +14,20 @@ router.get('/', isUser, function(req, res, next) {
 router.get('/:brand', function(req, res) {
     var brand = db.get('brands');
     var pro = db.get('products');
-    var Brand = req.params.brand
+    var total = 0;
+    var Brand = req.params.brand;
+    var cart = req.session.cart
+    var displayCart = { item: [] };
+    for (item in cart) {
+        displayCart.item.push(cart[item]);
+    }
     pro.find({ brand: Brand }, {}, function(err, products) {
         brand.find({}, {}, function(err, brands) {
             // var Uni = _.uniqBy(brands, "brand")
             res.render('pages/products', {
                 product: products,
                 brand: brands,
-
+                cart: displayCart
             });
         })
     })
@@ -29,28 +35,23 @@ router.get('/:brand', function(req, res) {
 
 
 
-router.get('/cart', isUser, function(req, res, done) {
-    var brand = db.get('brands');
-    var product = db.get('products');
-    var total = 0;
-    var cart = req.session.cart;
-    var displayCart = { item: [], total: 0 };
-    for (item in cart) {
-        displayCart.item.push(cart[item]);
-        total += (cart[item].qty * cart[item].price)
-    }
-    for (items in cart) {
-        displayCart.item.push(cart[items]);
-        total += (cart[items].qty * cart[items].price)
-    }
-    displayCart.total = total;
-    brand.find({}, {}, function(err, brands) {
-        res.render('pages/cart', {
-            brand: brands,
-            cart: displayCart
-        })
-    })
-})
+// router.get('/cart', function(req, res, done) {
+//     var brand = db.get('brands');
+//     var total = 0;
+//     var cart = req.session.cart;
+//     var displayCart = { item: [], total: 0 };
+//     for (item in cart) {
+//         displayCart.item.push(cart[item]);
+//         total += (cart[item].qty * cart[item].price)
+//     }
+//     displayCart.total = total;
+//     brand.find({}, {}, function(err, brands) {
+//         res.render('pages/cart', {
+//             brand: brands,
+//             cart: displayCart
+//         })
+//     })
+// })
 
 router.post('/cart', function(req, res) {
     var product_id = req.body.products_id

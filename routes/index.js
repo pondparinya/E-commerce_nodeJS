@@ -16,29 +16,33 @@ var db = require('monk')('mongodb+srv://ecommerce:ecommerce@cluster0.idq5h.mongo
 router.get('/', function(req, res) {
     var brand = db.get('brands');
     var product = db.get('products');
+    var cart = req.session.cart;
+    var displayCart = { item: [] };
+    for (item in cart) {
+        displayCart.item.push(cart[item]);
+    }
     product.find({}, {}, function(err, products) {
         brand.find({}, {}, function(err, brands) {
             res.render('pages/index', {
                 brand: brands,
-                product: products
+                product: products,
+                cart: displayCart
             })
         })
     })
 });
 ////////////////////////////////////////////////////////////////////////
 // Login Page
-router.get('/login', (req, res, next) => {
-    res.render('pages/login', { title: "LOGIN" });
-});
+
 
 router.post('/login', passport.authenticate('local', {
         // successRedirect: '/',
-        failureRedirect: '/login'
+        failureRedirect: '/'
     }),
     function(req, res) {
         var admin = req.user.admin
         if (admin == 1) {
-            res.redirect('/admin')
+            res.redirect('/')
         } else {
             res.redirect('/')
         }
@@ -53,10 +57,6 @@ router.get('/logout', function(req, res, next) {
 
 
 ////////////////////////////////////////////////////////////////////////
-// Register Page
-router.get('/register', (req, res, next) => {
-    res.render('pages/register');
-});
 
 router.post('/register', function(req, res, next) {
     var { username, email, password } = req.body
@@ -77,9 +77,9 @@ router.post('/register', function(req, res, next) {
 });
 
 
+
 router.get('/cart', function(req, res, done) {
     var brand = db.get('brands');
-    var product = db.get('products');
     var total = 0;
     var cart = req.session.cart;
     var displayCart = { item: [], total: 0 };
@@ -95,6 +95,7 @@ router.get('/cart', function(req, res, done) {
         })
     })
 })
+
 
 
 
