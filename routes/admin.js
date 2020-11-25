@@ -26,7 +26,6 @@ router.post('/addproducts', isAdmin, function(req, res, done) {
     products.insert({
         brand: req.body.brand,
         nameproducts: req.body.nameproducts,
-        desc: req.body.desc,
         price: parseFloat(req.body.price).toFixed(2),
         size: parseFloat(req.body.size).toFixed(1),
         img: req.body.img
@@ -75,8 +74,8 @@ router.post('/addbrand', [check('brandname', 'Please fill in the information').n
 //     desc = req.body.desc
 //     price = parseFloat(req.body.price).toFixed(2)
 //     img = req.body.img
-//     var size = [6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, ]
-
+//     size = size.body.size
+//     modelPro.findOne({ brand: brand },function())
 //     var newproduct = new modelPro({
 //         brand: brands,
 //         nameproducts: nameproducts,

@@ -3,6 +3,8 @@
         <title>
 
         </title>
+
+
 </head>
 <header>
     <%- include ('../partials/nav') -%>
@@ -20,6 +22,7 @@
 
         <div class="container">
             <div class="row justify-content-center">
+
                 <%product.forEach(function(products){ %>
                     <div class="col-md-4">
                         <div class="card" style="width: 18rem;margin-top:20px;">
@@ -36,30 +39,32 @@
                                 <form class="form-group" action="/users/cart" method="post">
                                     <div class="form-group">
                                         <label for="inputState" style="color:white">Size</label>
-                                        <select id="inputState" class="form-control" name="size" type="number">
+                                        <select id="inputState" class="form-control" name="size" type="text">
+                                            <option>6</option>US
+                                            <option>6.5</option>
+                                            <option>7</option>
+                                            <option>7.5</option>
+                                            <option>8</option>
+                                            <option>8.5</option>
+                                            <option>9</option>
+                                            <option>9.5</option>
+                                            <option>10</option>
+                                            <option>10.</option>
+                                            <option>11</option>
                                            
                                        
-                                        <option>6 US</option>
-                                        <option>6.5 US</option>
-                                        <option>7 US</option>
-                                        <option>7.5 US</option>
-                                        <option>8 US</option>
-                                        <option>8.5 US</option>
-                                        <option>9 US</option>
-                                        <option>9.5 US</option>
-                                        <option>10 US</option>
-                                        <option>10.5 US</option>
-                                        <option>11 US</option>
+                                       
                                     </select>
                                     </div>
                                     <input type="hidden" name="products_id" value="<%=products._id%>">
+                                    <input type="hidden" name="nameproducts" value="<%=products.nameproducts%>">
                                     <input type="submit" value="Add to cart" class="btn btn-primary ">
 
                                 </form>
                             </div>
                         </div>
                     </div>
-                    <% } )%>
+                    <% })%>
             </div>
         </div>
 
