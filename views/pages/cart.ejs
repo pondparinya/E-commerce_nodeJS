@@ -42,25 +42,7 @@
                                         <%= product.qty %>
                                     </td>
                                     <% }) }%>
-                                        <% if (cart.items){ %>
-                                            <% cart.items.forEach(function(product){ %>
-                                                <tr>
 
-                                                    <th scope="row">1</th>
-                                                    <td><img src="<%= product.img%> " width="72" height="72"></td>
-                                                    <td>
-                                                        <%= product.name  %>
-                                                    </td>
-                                                    <td>
-                                                        <%= product.price %>
-                                                    </td>
-                                                    <td>
-                                                        <%= product.size %>
-                                                    </td>
-                                                    <td>
-                                                        <%= product.qty %>
-                                                    </td>
-                                                    <% }) }%>
                     </tbody>
                 </table>
 
@@ -68,7 +50,7 @@
             </div>
         </div>
         <form action="/users/payment" method="POST" class="form-group">
-            <script src="http://checkout.stripe.cpm/checkout.js" class="stripe.button" data-name="" data-key="pk_test_51Hqx98I1kRWYSgPMj2J5DBfbaymaaJiFckYu1Gnp2k0LQsZQFR2kyyOkr2hkWFMOQhABEpkgexu2gLyAtxXOO0Ra00JXccQu3v">
+            <script src="http://checkout.stripe.cpm/checkout.js" class="stripe.button" data-name="IZEL" data-key="pk_test_51Hqx98I1kRWYSgPMj2J5DBfbaymaaJiFckYu1Gnp2k0LQsZQFR2kyyOkr2hkWFMOQhABEpkgexu2gLyAtxXOO0Ra00JXccQu3v">
             </script>
 
         </form>
