@@ -69,7 +69,7 @@ router.post('/addbrand', [check('brandname', 'Please fill in the information').n
 });
 
 
-router.get('/del', function(req, res) {
+router.get('/del', isAdmin,function(req, res) {
     var products = db.get('products');
     modelPro.find({}, {}, function(err, pro) {
         res.render('admin_pages/del_products', { product: pro })
